@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "角色用户维护";
+    int roleId = (int)ViewBag.RoleID;
+}
+@using Webdiyer.WebControls.Mvc;
+@using EFramework.Entities.Domain.Account;
+@model PagedList<EF_Account_RoleUsersEntity>
+@section bread
+{
+     <li><a href="@Url.Action("roles", "Security")">角色管理</a></li>
+    <li class="active">角色用户</li>
+}
+<div class="page-content">
+    <div class="page-header">
+        <h1>角色用户
+		@*<small>
+            <i class="icon-double-angle-right"></i>
+            overview &amp; stats
+        </small>*@
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @using (Html.BeginForm("roleusers", "Security", new { pageIndex = "" }, FormMethod.Get, new { id = "searchForm", role = "form", @class = "form-inline" }))
+            {
+                <div class="form-group">
+                    <input type="text" class="form-control" name="UserName" placeholder="登录名" value="@ViewBag.UserName" />
+                </div>
+                <div class="form-group">
+                    <select name="roleId" class="form-control" id="roleId">
+                        <option value="0">所有角色</option>
+                        @foreach (var item in EFramework.Services.AccountService.GetAvailableRoles())
+                        {
+                            <option @if (item.RoleID == roleId)
+                                    {<text>selected="selected"</text>} value="@item.RoleID">@item.RoleName</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info">
+                        <i class="icon-search "></i>
+                        检索		
+                    </button>
+                </div>
+            }
+            <div class="table-responsive" id="divRoleUsers">
+                @Html.Partial("_AjaxRoleUsersPartial", Model)
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+    <script type="text/javascript">
+        $(document).on("click", ".btn_delfromuser", function () {
+            var userId = $(this).attr("data-param");
+            var roleId = $("#roleId").val();
+            if (roleId <= 0) {
+                alert("请选择要从中删除的角色。");
+                return;
+            }
+            $.post("@Url.Action("RoleUserDelete")", { id: roleId, uid: userId }, function (data) {
+                if (data) {
+                    if (data.status == 1) {
+                        $("#searchForm").submit();
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+                else {
+                    alert("系统异常，请联系管理员");
+                }
+            }, "JSON");
+        });
+    </script>
+
+}

@@ -1,0 +1,943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4A1840E-74BA-43C9-BFC8-CA03C0F239FE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNet.Framework.Admin</RootNamespace>
+    <AssemblyName>DotNet.Framework.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNet.Framework.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EDNFramework\DotNet.Framework.Core\DotNet.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.Framework.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EDNFramework\DotNet.Framework.Utils\DotNet.Framework.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Control_AlertModal.ascx" />
+    <Content Include="Controls\Control_MessageBox.ascx" />
+    <Content Include="Controls\Control_SubNavbar.ascx" />
+    <Content Include="Controls\Control_ToolsBar.ascx" />
+    <Content Include="ErrorPage\Browser_Not_Support.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Index.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Pages\Account\Department\Add.aspx" />
+    <Content Include="Pages\Account\Department\Default.aspx" />
+    <Content Include="Pages\Account\Permission\Index.aspx" />
+    <Content Include="Pages\Account\Role\default.aspx" />
+    <Content Include="Pages\Account\Role\RolePermission.aspx" />
+    <Content Include="Pages\Account\User\default.aspx" />
+    <Content Include="Pages\Account\User\Edit.aspx" />
+    <Content Include="Pages\Account\User\Index.aspx" />
+    <Content Include="Pages\Account\User\Insert.aspx" />
+    <Content Include="Pages\Account\User\ModifyInfo.aspx" />
+    <Content Include="Pages\Account\User\ModifyPass.aspx" />
+    <Content Include="Pages\Account\User\SetRole.aspx" />
+    <Content Include="Pages\Articles\Category\Add.aspx" />
+    <Content Include="Pages\Articles\Category\default.aspx" />
+    <Content Include="Pages\Articles\Category\Edit.aspx" />
+    <Content Include="Pages\Articles\Item\Add.aspx" />
+    <Content Include="Pages\Articles\Item\default.aspx" />
+    <Content Include="Pages\Articles\Item\Edit.aspx" />
+    <Content Include="Pages\ControlPanel\SYSConfig\default.aspx" />
+    <Content Include="Pages\ControlPanel\SYSFilterWords\Index.aspx" />
+    <Content Include="Pages\ControlPanel\SYSMailConfig\Index.aspx" />
+    <Content Include="Pages\exam.aspx" />
+    <Content Include="Pages\Index.aspx" />
+    <Content Include="Pages\Log\ErrorLog\default.aspx" />
+    <Content Include="Pages\Log\ErrorLog\Show.aspx" />
+    <Content Include="Pages\Log\SYSLog\Index.aspx" />
+    <Content Include="Pages\Log\UserLog\Index.aspx" />
+    <Content Include="Resource\browselogo\chromelogo.png" />
+    <Content Include="Resource\browselogo\firefoxlogo.png" />
+    <Content Include="Resource\browselogo\ielogo.png" />
+    <Content Include="Resource\browselogo\operalogo.png" />
+    <Content Include="Resource\browselogo\safari_logo.png" />
+    <Content Include="Resource\Font\fontawesome-webfont.svg" />
+    <Content Include="Resource\Images\body-bg.png" />
+    <Content Include="Resource\Images\checkmark.gif" />
+    <Content Include="Resource\Images\checknomark.gif" />
+    <Content Include="Resource\Images\glyphicons-halflings.png" />
+    <Content Include="Resource\Images\hz_logo.gif" />
+    <Content Include="Resource\Images\hz_logo2.gif" />
+    <Content Include="Resource\Images\hz_logo3.gif" />
+    <Content Include="Resource\Images\hz_logo4.png" />
+    <Content Include="Resource\Images\logo.png" />
+    <Content Include="Resource\Images\logo2.png" />
+    <Content Include="Resource\Images\signin\check.png" />
+    <Content Include="Resource\Images\signin\fb_btn.png" />
+    <Content Include="Resource\Images\signin\password.png" />
+    <Content Include="Resource\Images\signin\twitter_btn.png" />
+    <Content Include="Resource\Images\signin\user.png" />
+    <Content Include="Resource\Images\tools_btn_bg.gif" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\css\demo_page.css" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\css\demo_table.css" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\css\demo_table_jui.css" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\css\jquery.dataTables.css" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\back_disabled.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\back_enabled.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\back_enabled_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\favicon.ico" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\forward_disabled.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\forward_enabled.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\forward_enabled_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\sort_asc.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\sort_asc_disabled.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\sort_both.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\sort_desc.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\sort_desc_disabled.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\js\jquery.dataTables.js" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\js\jquery.dataTables.min.js" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\css\TableTools.css" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\css\TableTools_JUI.css" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\background.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\collection.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\collection_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\copy.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\copy_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\csv.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\csv_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\pdf.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\pdf_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\print.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\print_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\xls.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\xls_hover.png" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\js\TableTools.js" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\js\TableTools.min.js" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\js\ZeroClipboard.js" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\swf\copy_csv_xls.swf" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Resource\Libs\iCheck\jquery.icheck.min.js" />
+    <Content Include="Resource\Libs\iCheck\skins\all.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\aero.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\aero.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\blue.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\blue.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\flat.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\flat.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\green%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\green.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\green.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\grey.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\grey.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\orange.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\orange.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\pink.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\pink.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\purple.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\purple.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\red%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\red.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\red.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\yellow.css" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\yellow.png" />
+    <Content Include="Resource\Libs\iCheck\skins\flat\_all.css" />
+    <Content Include="Resource\Libs\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\futurico\futurico.css" />
+    <Content Include="Resource\Libs\iCheck\skins\futurico\futurico.png" />
+    <Content Include="Resource\Libs\iCheck\skins\line\aero.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\blue.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\green.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\grey.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\line%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\line\line.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\line.png" />
+    <Content Include="Resource\Libs\iCheck\skins\line\orange.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\pink.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\purple.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\red.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\yellow.css" />
+    <Content Include="Resource\Libs\iCheck\skins\line\_all.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\aero.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\aero.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\blue.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\blue.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\green.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\green.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\grey.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\grey.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\minimal.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\minimal.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\orange.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\orange.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\pink.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\pink.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\purple.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\purple.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\red.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\red.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\yellow.css" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\yellow.png" />
+    <Content Include="Resource\Libs\iCheck\skins\minimal\_all.css" />
+    <Content Include="Resource\Libs\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\polaris\polaris.css" />
+    <Content Include="Resource\Libs\iCheck\skins\polaris\polaris.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\aero%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\aero.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\aero.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\blue%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\blue.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\blue.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\green%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\green.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\green.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\grey%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\grey.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\grey.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\orange%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\orange.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\orange.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\pink%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\pink.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\pink.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\purple%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\purple.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\purple.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\red%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\red.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\red.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\square%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\square.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\square.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\yellow.css" />
+    <Content Include="Resource\Libs\iCheck\skins\square\yellow.png" />
+    <Content Include="Resource\Libs\iCheck\skins\square\_all.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\animated-overlay.gif" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery-ui.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.all.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.base.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.button.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.core.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.menu.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.slider.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.theme.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\ui\jquery.ui.button.js" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\ui\jquery.ui.dialog.js" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\ui\jquery.ui.position.js" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\ui\jquery.ui.widget.js" />
+    <Content Include="Resource\Libs\jquery-ui\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Resource\Libs\jquery-ui\bundle\ui\jquery.ui.core.js" />
+    <Content Include="Resource\Libs\pqgrid\ChangeLog.txt" />
+    <Content Include="Resource\Libs\pqgrid\GPL-LICENSE.txt" />
+    <Content Include="Resource\Libs\pqgrid\images\column-header-bg.png" />
+    <Content Include="Resource\Libs\pqgrid\images\column-header-over-bg.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\cross.png" />
+    <Content Include="Resource\Libs\pqgrid\images\horiz-bg.png" />
+    <Content Include="Resource\Libs\pqgrid\images\horiz-slider-bg.png" />
+    <Content Include="Resource\Libs\pqgrid\images\loading.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\page-first-gray.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\page-last-gray.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\page-next-gray.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\page-prev-gray.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\Refresh.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\sort_asc.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\sort_desc.gif" />
+    <Content Include="Resource\Libs\pqgrid\images\sprite.png" />
+    <Content Include="Resource\Libs\pqgrid\images\tick.png" />
+    <Content Include="Resource\Libs\pqgrid\images\vert-bg.png" />
+    <Content Include="Resource\Libs\pqgrid\images\vert-slider-bg.png" />
+    <Content Include="Resource\Libs\pqgrid\index.htm" />
+    <Content Include="Resource\Libs\pqgrid\pqgrid.min.css" />
+    <Content Include="Resource\Libs\pqgrid\pqgrid.min.js" />
+    <Content Include="Resource\Libs\pqgrid\ReadMe.txt" />
+    <Content Include="Resource\Libs\terebentina-sco.js\css\scojs.css" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.ajax.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.collapse.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.confirm.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.countdown.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.message.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.modal.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.panes.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.tab.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.tooltip.js" />
+    <Content Include="Resource\Libs\terebentina-sco.js\js\sco.valid.js" />
+    <Content Include="Resource\Libs\ueditor\dialogs\anchor\anchor.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\emotion.css" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\emotion.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\emotion.js" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\0.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="Resource\Libs\ueditor\dialogs\gmap\gmap.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\image.css" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\image.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\image.js" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\images\center_focus.jpg" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\images\left_focus.jpg" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\images\none_focus.jpg" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\images\right_focus.jpg" />
+    <Content Include="Resource\Libs\ueditor\dialogs\image\imageUploader.swf" />
+    <Content Include="Resource\Libs\ueditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\internal.js" />
+    <Content Include="Resource\Libs\ueditor\dialogs\link\link.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\map\map.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\spechars\spechars.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\spechars\spechars.js" />
+    <Content Include="Resource\Libs\ueditor\dialogs\table\dragicon.png" />
+    <Content Include="Resource\Libs\ueditor\dialogs\table\edittable.css" />
+    <Content Include="Resource\Libs\ueditor\dialogs\table\edittable.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\table\edittable.js" />
+    <Content Include="Resource\Libs\ueditor\dialogs\table\edittd.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\table\edittip.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\tangram.js" />
+    <Content Include="Resource\Libs\ueditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="Resource\Libs\ueditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="Resource\Libs\ueditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="Resource\Libs\ueditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="Resource\Libs\ueditor\lang\zh-cn\images\copy.png" />
+    <Content Include="Resource\Libs\ueditor\lang\zh-cn\images\imglabel.png" />
+    <Content Include="Resource\Libs\ueditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="Resource\Libs\ueditor\lang\zh-cn\images\music.png" />
+    <Content Include="Resource\Libs\ueditor\lang\zh-cn\images\upload.png" />
+    <Content Include="Resource\Libs\ueditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="Resource\Libs\ueditor\themes\default\css\ueditor.css" />
+    <Content Include="Resource\Libs\ueditor\themes\default\dialogbase.css" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\anchor.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\arrow.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\arrow_down.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\arrow_up.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\button-bg.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\cursor_h.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\cursor_h.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\cursor_v.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\cursor_v.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\filescan.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\highlighted.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\icons-all.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\icons.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\icons.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\lock.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\pagebreak.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\scale.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\spacer.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\sparator_v.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\table-cell-align.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\upload.png" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\videologo.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\word.gif" />
+    <Content Include="Resource\Libs\ueditor\themes\default\images\wordpaste.png" />
+    <Content Include="Resource\Libs\ueditor\themes\iframe.css" />
+    <Content Include="Resource\Libs\ueditor\third-party\codemirror\codemirror.css" />
+    <Content Include="Resource\Libs\ueditor\third-party\codemirror\codemirror.js" />
+    <Content Include="Resource\Libs\ueditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="Resource\Libs\ueditor\ueditor.all.js" />
+    <Content Include="Resource\Libs\ueditor\ueditor.all.min.js" />
+    <Content Include="Resource\Libs\ueditor\ueditor.config.js" />
+    <Content Include="Resource\Libs\ueditor\ueditor.parse.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\demo.css" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\loading.gif" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.all-3.5.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.all-3.5.min.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.core-3.5.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.core-3.5.min.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.excheck-3.5.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.excheck-3.5.min.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.exedit-3.5.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.exedit-3.5.min.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.exhide-3.5.js" />
+    <Content Include="Resource\Libs\zTreeV3.5.14\js\jquery.ztree.exhide-3.5.min.js" />
+    <Content Include="Resource\Libs\showLoading\css\showLoading.css" />
+    <Content Include="Resource\Libs\showLoading\images\loading-bars.gif" />
+    <Content Include="Resource\Libs\showLoading\images\loading.gif" />
+    <Content Include="Resource\Libs\showLoading\jquery.showLoading.example.html" />
+    <Content Include="Resource\Libs\showLoading\js\jquery.showLoading.js" />
+    <Content Include="Resource\Libs\showLoading\js\jquery.showLoading.min.js" />
+    <Content Include="Resource\Pages\Account\Department\add.js" />
+    <Content Include="Resource\Pages\Account\Department\default.js" />
+    <Content Include="Resource\Pages\Account\Permission\Index.js" />
+    <Content Include="Resource\Pages\Account\Role\default.js" />
+    <Content Include="Resource\Pages\Account\Role\Index.js" />
+    <Content Include="Resource\Pages\Account\Role\RolePermission.js" />
+    <Content Include="Resource\Pages\Account\User\Add.js" />
+    <Content Include="Resource\Pages\Account\User\default.js" />
+    <Content Include="Resource\Pages\Account\User\Edit.js" />
+    <Content Include="Resource\Pages\Account\User\Index.js" />
+    <Content Include="Resource\Pages\Account\User\insert.js" />
+    <Content Include="Resource\Pages\Account\User\ModifyInfo.js" />
+    <Content Include="Resource\Pages\Account\User\ModifyPass.js" />
+    <Content Include="Resource\Pages\Account\User\SetRole.js" />
+    <Content Include="Resource\Pages\Articles\Category\Add.js" />
+    <Content Include="Resource\Pages\Articles\Category\default.js" />
+    <Content Include="Resource\Pages\Articles\Category\Edit.js" />
+    <Content Include="Resource\Pages\Articles\Category\Index.js" />
+    <Content Include="Resource\Pages\Articles\Item\Add.js" />
+    <Content Include="Resource\Pages\Articles\Item\default.js" />
+    <Content Include="Resource\Pages\Articles\Item\Edit.js" />
+    <Content Include="Resource\Pages\Articles\Item\Index.js" />
+    <Content Include="Resource\Pages\ControlPanel\SYSConfig\default.js" />
+    <Content Include="Resource\Pages\ControlPanel\SYSConfig\Index.js" />
+    <Content Include="Resource\Pages\ControlPanel\SYSConfig\副本 default.js" />
+    <Content Include="Resource\Pages\exam.js" />
+    <Content Include="Resource\Pages\index.js" />
+    <Content Include="Resource\Pages\Install.js" />
+    <Content Include="Resource\Pages\Log\ErrorLog\default.js" />
+    <Content Include="Resource\Pages\Log\ErrorLog\index.js" />
+    <Content Include="Resource\Pages\Log\ErrorLog\Show.js" />
+    <Content Include="Resource\Scripts\base.js" />
+    <Content Include="Resource\Scripts\bootstrap.js" />
+    <Content Include="Resource\Scripts\charts\area.js" />
+    <Content Include="Resource\Scripts\charts\bar.js" />
+    <Content Include="Resource\Scripts\charts\donut.js" />
+    <Content Include="Resource\Scripts\charts\line.js" />
+    <Content Include="Resource\Scripts\charts\pie.js" />
+    <Content Include="Resource\Scripts\excanvas.min.js" />
+    <Content Include="Resource\Scripts\Extend\jquery.extend.js" />
+    <Content Include="Resource\Scripts\faq.js" />
+    <Content Include="Resource\Scripts\FunctionJS.js" />
+    <Content Include="Resource\Scripts\guidely\guidely-number.png" />
+    <Content Include="Resource\Scripts\guidely\guidely.css" />
+    <Content Include="Resource\Scripts\guidely\guidely.min.js" />
+    <Content Include="Resource\Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Resource\Scripts\jquery-1.7.2.min_74e92c4.js" />
+    <Content Include="Resource\Scripts\jquery.flot.js" />
+    <Content Include="Resource\Scripts\jquery.flot.orderBars.js" />
+    <Content Include="Resource\Scripts\jquery.flot.pie.js" />
+    <Content Include="Resource\Scripts\jquery.flot.resize.js" />
+    <Content Include="Resource\Scripts\jquery.pin.min.js" />
+    <Content Include="Resource\Scripts\jquery.ui.custom.js" />
+    <Content Include="Resource\Scripts\jquery.validate.js" />
+    <Content Include="Resource\Scripts\jquery.wizard.js" />
+    <Content Include="Resource\Scripts\json2.js" />
+    <Content Include="Resource\Scripts\signin.js" />
+    <Content Include="Resource\Style\base-admin-responsive.css" />
+    <Content Include="Resource\Style\base-admin.css" />
+    <Content Include="Resource\Style\bootstrap-responsive.min.css" />
+    <Content Include="Resource\Style\bootstrap.min.css" />
+    <Content Include="Resource\Style\font-awesome.css" />
+    <Content Include="Resource\Style\pages\dashboard.css" />
+    <Content Include="Resource\Style\pages\faq.css" />
+    <Content Include="Resource\Style\pages\plans.css" />
+    <Content Include="Resource\Style\pages\reports.css" />
+    <Content Include="Resource\Style\pages\signin.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\AppBaseResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppBaseResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Control_AlertModal.ascx.cs">
+      <DependentUpon>Control_AlertModal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Control_AlertModal.ascx.designer.cs">
+      <DependentUpon>Control_AlertModal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Control_MessageBox.ascx.cs">
+      <DependentUpon>Control_MessageBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Control_MessageBox.ascx.designer.cs">
+      <DependentUpon>Control_MessageBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Control_SubNavbar.ascx.cs">
+      <DependentUpon>Control_SubNavbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Control_SubNavbar.ascx.designer.cs">
+      <DependentUpon>Control_SubNavbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Control_ToolsBar.ascx.cs">
+      <DependentUpon>Control_ToolsBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Control_ToolsBar.ascx.designer.cs">
+      <DependentUpon>Control_ToolsBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\Browser_Not_Support.aspx.cs">
+      <DependentUpon>Browser_Not_Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\Browser_Not_Support.aspx.designer.cs">
+      <DependentUpon>Browser_Not_Support.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\Department\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\Department\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\Department\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\Department\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\Permission\ajax.ashx.cs">
+      <DependentUpon>ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\Permission\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\Permission\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\Role\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\Role\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\Role\RolePermission.aspx.cs">
+      <DependentUpon>RolePermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\Role\RolePermission.aspx.designer.cs">
+      <DependentUpon>RolePermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\User\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\User\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\User\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\User\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\User\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\User\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\User\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\User\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\User\ModifyInfo.aspx.cs">
+      <DependentUpon>ModifyInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\User\ModifyInfo.aspx.designer.cs">
+      <DependentUpon>ModifyInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\User\ModifyPass.aspx.cs">
+      <DependentUpon>ModifyPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\User\ModifyPass.aspx.designer.cs">
+      <DependentUpon>ModifyPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\User\SetRole.aspx.cs">
+      <DependentUpon>SetRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\User\SetRole.aspx.designer.cs">
+      <DependentUpon>SetRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Articles\Category\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Articles\Category\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Articles\Category\Ajax.ashx.cs">
+      <DependentUpon>Ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Articles\Category\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Articles\Category\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Articles\Category\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Articles\Category\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Articles\Item\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Articles\Item\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Articles\Item\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Articles\Item\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Articles\Item\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Articles\Item\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ControlPanel\SYSConfig\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ControlPanel\SYSConfig\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ControlPanel\SYSFilterWords\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ControlPanel\SYSFilterWords\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ControlPanel\SYSMailConfig\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ControlPanel\SYSMailConfig\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialog.Master.cs">
+      <DependentUpon>Dialog.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialog.Master.designer.cs">
+      <DependentUpon>Dialog.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\exam.aspx.cs">
+      <DependentUpon>exam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\exam.aspx.designer.cs">
+      <DependentUpon>exam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Log\ErrorLog\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Log\ErrorLog\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Log\ErrorLog\Show.aspx.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Log\ErrorLog\Show.aspx.designer.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Log\SYSLog\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Log\SYSLog\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Log\UserLog\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Log\UserLog\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Libs\ueditor\net\Uploader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Font\fontawesome-webfont.eot" />
+    <Content Include="Resource\Font\fontawesome-webfont.svgz" />
+    <Content Include="Resource\Font\fontawesome-webfont.ttf" />
+    <Content Include="Resource\Font\fontawesome-webfont.woff" />
+    <Content Include="Resource\Font\fontawesome-webfont_162a16fe.eot" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\images\Sorting icons.psd" />
+    <Content Include="Pages\Admin.Master" />
+    <Content Include="Pages\Articles\Category\Ajax.ashx" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\as3\lib\AlivePDF.swc" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\as3\ZeroClipboard.as" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\as3\ZeroClipboardPdf.as" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\psd\collection.psd" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\psd\copy document.psd" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\psd\file_types.psd" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\images\psd\printer.psd" />
+    <Content Include="Resource\Libs\DataTables-1.9.4\media\js\TableTools.min.js.gz" />
+    <Content Include="Pages\Account\Permission\ajax.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\fileUp.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\getContent.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\getMovie.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\getRemoteImage.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\imageManager.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\imageUp.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\scrawlUp.ashx" />
+    <Content Include="Resource\Libs\ueditor\net\Web.config" />
+    <Content Include="Resource\Libs\jquery-ui\js\jquery-ui.min.js" />
+    <Content Include="Pages\Dialog.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotNet.Framework.Admin.Business\DotNet.Framework.Admin.Business.csproj">
+      <Project>{4815033d-28dd-403a-a187-8879a0450c6c}</Project>
+      <Name>DotNet.Framework.Admin.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotNet.Framework.Admin.Core\DotNet.Framework.Admin.Core.csproj">
+      <Project>{b884c319-e8d9-4e82-b02b-0d2942ac7b1a}</Project>
+      <Name>DotNet.Framework.Admin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotNet.Framework.Admin.Entity\DotNet.Framework.Admin.Entity.csproj">
+      <Project>{44deb649-b841-43be-ad0c-8c90a898df9e}</Project>
+      <Name>DotNet.Framework.Admin.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Products\" />
+    <Folder Include="Resource\Pages\Product\Category\" />
+    <Folder Include="Resource\Pages\Product\Item\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\AppBaseResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AppBaseResource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19108</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13578/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

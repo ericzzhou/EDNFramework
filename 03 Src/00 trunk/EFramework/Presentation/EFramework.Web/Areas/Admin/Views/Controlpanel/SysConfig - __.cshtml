@@ -1,0 +1,328 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
+
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home home-icon"></i>
+            <a href="@Url.Action("index")">管理后台</a>
+        </li>
+        <li><a href="@Url.Action("sysconfig", "controlpanel")">控制面板</a></li>
+        <li class="active">系统配置</li>
+    </ul>
+    <!-- .breadcrumb -->
+
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+            <span class="input-icon">
+                <input type="text" placeholder="搜索 ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+        </form>
+    </div>
+    <!-- #nav-search -->
+</div>
+
+<div class="page-content">
+    @*<div class="page-header">
+            <h1>Dashboard
+								<small>
+                                    <i class="icon-double-angle-right"></i>
+                                    overview &amp; stats
+                                </small>
+            </h1>
+        </div>*@
+    <!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="widget-box transparent" id="recent-box2">
+                        <div class="widget-header">
+                            <h4 class="lighter smaller">
+                                <i class="icon-rss orange"></i>
+                                系统配置
+                            </h4>
+                            <div class="widget-toolbar no-border">
+                                <ul class="nav nav-tabs" id="recent-tab2">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#server-tab">系统配置</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="tab" href="#customer-tab">参数设定</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main padding-4">
+                                <div class="tab-content padding-8 overflow-visible">
+                                    <div id="server-tab" class="tab-pane active">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 155px;">网站名称</td>
+                                                    <td>
+                                                        <input type="text" class="col-xs-12 " placeholder="网站名称" /></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>网站域名</td>
+                                                    <td>
+                                                        <input type="text" class="col-xs-12 " placeholder="网站域名" /></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>网站Logo</td>
+                                                    <td>
+                                                        <input type="text" class="col-xs-12 " placeholder="网站Logo" /></td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>网站版权信息</td>
+                                                    <td>
+                                                        <input type="text" class="col-xs-12 " placeholder="网站版权信息" /></td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>备案号</td>
+                                                    <td>
+                                                        <input type="text" class="col-xs-12 " placeholder="备案号" /></td>
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>站点关键词</td>
+                                                    <td>
+                                                        <input type="text" class="col-xs-12 " placeholder="站点关键词" /></td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>站点描述</td>
+                                                    <td>
+                                                        <textarea class="col-xs-12 " placeholder="网站描述"></textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>站点授权码</td>
+                                                    <td>
+                                                        <input type="text" class="col-xs-12 " placeholder="站点授权码" /></td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>站点统计脚本</td>
+                                                    <td>
+                                                        <textarea class="col-xs-12 " placeholder="站点统计脚本"></textarea>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                       
+                                                            <div class="col-md-offset-3 col-md-9">
+                                                                <button class="btn btn-info" type="button">
+                                                                    <i class="icon-ok bigger-110"></i>
+                                                                    保存
+                                                                </button>
+
+                                                                &nbsp; &nbsp; &nbsp;
+											<button class="btn" type="reset">
+                                                <i class="icon-undo bigger-110"></i>
+                                                重置
+                                            </button>
+                                                            </div>
+                                                       
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div id="customer-tab" class="tab-pane">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 240px;">客户端ip地址</td>
+                                                    <td>@Request.ServerVariables["REMOTE_ADDR"] </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器类型</td>
+                                                    <td>@Request.Browser.Type</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器类型</td>
+                                                    <td>@Request.Browser</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器版本</td>
+                                                    <td>@Request.Browser.Version</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器主版本</td>
+                                                    <td>@Request.Browser.MajorVersion</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器次版本</td>
+                                                    <td>@Request.Browser.MinorVersion</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否测试版本</td>
+                                                    <td>@Request.Browser.Beta</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否客户平台</td>
+                                                    <td>@Request.Browser.Platform</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否AOL 浏览器</td>
+                                                    <td>@Request.Browser.AOL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否基于Win16</td>
+                                                    <td>@Request.Browser.Win16</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否基于Win32</td>
+                                                    <td>@Request.Browser.Win32</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持框架</td>
+                                                    <td>@Request.Browser.Frames</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持表格</td>
+                                                    <td>@Request.Browser.Tables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持Cookies</td>
+                                                    <td>@Request.Browser.Cookies</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持VB Script</td>
+                                                    <td>@Request.Browser.VBScript</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持JavaScript</td>
+                                                    <td>@HttpContext.Current.Request.Browser.JavaScript</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器支持JScript的版本</td>
+                                                    <td>@Request.Browser.JScriptVersion</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持JavaApplets</td>
+                                                    <td>@Request.Browser.JavaApplets</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持ActiveXControls</td>
+                                                    <td>@Request.Browser.ActiveXControls</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器是否支持CDF</td>
+                                                    <td>@Request.Browser.CDF</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>户端浏览器是否支持背景音乐</td>
+                                                    <td>@Request.Browser.BackgroundSounds</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器ECMAScript版本</td>
+                                                    <td>@Request.Browser.EcmaScriptVersion</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器MSDom版本</td>
+                                                    <td>@Request.Browser.MSDomVersion</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器W3CDom版本</td>
+                                                    <td>@Request.Browser.W3CDomVersion</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>客户端浏览器语言</td>
+                                                    <td>@Request.ServerVariables["HTTP_ACCEPT_LANGUAGE"]</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- member-tab -->
+
+                                </div>
+                            </div>
+                            <!-- /widget-main -->
+                        </div>
+                        <!-- /widget-body -->
+                    </div>
+                    <!-- /widget-box -->
+                </div>
+                <!-- /span -->
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.page-content -->
+
+<!-- /.main-content -->
+
+<div class="ace-settings-container" id="ace-settings-container">
+    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+        <i class="icon-cog bigger-150"></i>
+    </div>
+
+    <div class="ace-settings-box" id="ace-settings-box">
+        <div>
+            <div class="pull-left">
+                <select id="skin-colorpicker" class="hide">
+                    <option data-skin="default" value="#438EB9">#438EB9</option>
+                    <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                    <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                    <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                </select>
+            </div>
+            <span>&nbsp; Choose Skin</span>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+            <label class="lbl" for="ace-settings-navbar">Fixed Navbar</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+            <label class="lbl" for="ace-settings-sidebar">Fixed Sidebar</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+            <label class="lbl" for="ace-settings-breadcrumbs">Fixed Breadcrumbs</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+            <label class="lbl" for="ace-settings-rtl">Right To Left (rtl)</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+            <label class="lbl" for="ace-settings-add-container">
+                Inside
+								<b>.container</b>
+            </label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4815033D-28DD-403A-A187-8879A0450C6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNet.Framework.Admin.Business</RootNamespace>
+    <AssemblyName>DotNet.Framework.Admin.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNet.Framework.Core">
+      <HintPath>..\..\..\..\packages\EDNFramework\DotNet.Framework.Core\v2.0.0.1\DotNet.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.Framework.DataAccess, Version=2.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\EDNFramework\DotNet.Framework.DataAccess\v2.1.0.2\DotNet.Framework.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EDNFramework_Account\Business_Department.cs" />
+    <Compile Include="EDNFramework_Account\Business_PermissionAction.cs" />
+    <Compile Include="EDNFramework_Account\Business_Role.cs" />
+    <Compile Include="EDNFramework_Account\Business_RolePermissionsAction.cs" />
+    <Compile Include="EDNFramework_Account\Business_User.cs" />
+    <Compile Include="EDNFramework_Account\Bussines_Permission.cs" />
+    <Compile Include="EDNFramework_Account\Business_PermissionCategories.cs" />
+    <Compile Include="EDNFramework_CMS\Business_ClassType.cs" />
+    <Compile Include="EDNFramework_CMS\Business_Content.cs" />
+    <Compile Include="EDNFramework_CMS\Business_ContentClass.cs" />
+    <Compile Include="EDNFramework_CMS\Business_FLinks.cs" />
+    <Compile Include="EDNFramework_CMS\Business_Slide.cs" />
+    <Compile Include="EDNFramework_CMS\Business_Slide_Item.cs" />
+    <Compile Include="EDNFramework_Product\Business_Product_Class.cs" />
+    <Compile Include="EDNFramework_Product\Business_Product_Item.cs" />
+    <Compile Include="EDNFramework_Repairs\Business_Repairs.cs" />
+    <Compile Include="EDNFramework_SYS\Business_ConfigContent.cs" />
+    <Compile Include="EDNFramework_SYS\Business_ErrorLog.cs" />
+    <Compile Include="EDNFramework_SYS\Business_FloatAD.cs" />
+    <Compile Include="EDNFramework_SYS\Business_SingleJumpAD.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EDNFramework.Admin.Core\DotNet.Framework.Admin.Core.csproj">
+      <Project>{b884c319-e8d9-4e82-b02b-0d2942ac7b1a}</Project>
+      <Name>DotNet.Framework.Admin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EDNFramework.Admin.Entity\DotNet.Framework.Admin.Entity.csproj">
+      <Project>{44deb649-b841-43be-ad0c-8c90a898df9e}</Project>
+      <Name>DotNet.Framework.Admin.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

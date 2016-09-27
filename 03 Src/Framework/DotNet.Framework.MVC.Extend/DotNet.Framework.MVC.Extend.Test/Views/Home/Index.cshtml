@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "主页";
+}
+@using DotNet.Framework.MVC.Extend.Extends;
+
+
+<h2>@ViewBag.Message</h2>
+<p>
+    若要了解有关 ASP.NET MVC 的更多信息，请访问 <a href="http://asp.net/mvc" title="ASP.NET MVC 网站">http://asp.net/mvc</a>。
+</p>
+@foreach (var item in Html.EDNFHelper_Articles(0, "where classid = 41"))
+{
+    <a>@item.Title</a>   <br /> 
+}
+<hr />
+@{
+    
+    var entity = Html.EDNFHelper_Article(12, "whEre ContentID=12");
+}
+@entity.Title
+
+<hr />111
+@Html.Raw(Html.EDNFHelper_SingleJumpAD_Show("ad1"))
+  <hr />

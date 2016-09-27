@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "EditUser";
+}
+@using EFramework.Web.Framework.Extends;
+@model EFramework.Entities.Domain.Account.EF_Account_UserEntity
+@section bread
+{
+    <li><a href="@Url.Action("users", "Security")">用户管理</a></li>
+    <li class="active">修改用户</li>
+}
+<div class="page-content">
+    <div class="page-header">
+        <h1>添加用户角色
+		@*<small>
+            <i class="icon-double-angle-right"></i>
+            overview &amp; stats
+        </small>*@
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @using (Ajax.EFBeginForm("EditUser", "Security"))
+            {
+                <input type="hidden" value="@Model.UserID" name="UserID" />
+                
+                <div class="form-group">
+                    <label for="UserName" class="col-sm-3 control-label no-padding-right">登录名 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <input type="text" id="UserName" class="col-xs-12 col-sm-8" name="UserName" value="@Model.UserName" placeholder="请输入登录名">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password" class="col-sm-3 control-label no-padding-right">登录密码 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <input type="password" id="Password" class="col-xs-12 col-sm-8" name="Password" value="@Model.Password" placeholder="请输入登录密码">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group ">
+                    <label for="NickName" class="col-sm-3 control-label no-padding-right">昵称</label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <input type="text" id="NickName" class="col-xs-12 col-sm-8" name="NickName" value="@Model.NickName" placeholder="请输入昵称">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group ">
+                    <label for="TrueName" class="col-sm-3 control-label no-padding-right">姓名</label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <input type="text" id="TrueName" class="col-xs-12 col-sm-8" name="TrueName" value="@Model.TrueName" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="TrueName" class="col-sm-3 control-label no-padding-right">性别</label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <label>
+                                <input type="radio" name="Sex" value="男" />
+                                男</label>
+                            <label>
+                                <input type="radio" name="Sex" value="女" />
+                                女</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="Phone" class="col-sm-3 control-label no-padding-right">电话号码</label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <input type="text" id="Phone" class="col-xs-12 col-sm-8" name="Phone" value="@Model.Phone" placeholder="请输入电话号码">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="Email" class="col-sm-3 control-label no-padding-right">邮箱地址</label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <input type="text" id="Email" class="col-xs-12 col-sm-8" name="Email" value="@Model.Email" placeholder="请输入邮箱地址">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="Email" class="col-sm-3 control-label no-padding-right">状态</label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <label>
+                                <input type="checkbox" name="Activity" @if (Model.Activity)
+                                                                       {
+                                                                           <text>checked="checked"</text>
+                                                                       } />
+                                激活</label>
+
+                        </div>
+                    </div>
+                </div>
+                   
+        
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-info">
+                            <i class="icon-ok bigger-110"></i>
+                            保存		
+                        </button>
+                        &nbsp; &nbsp; &nbsp;			
+                    <button type="reset" class="btn">
+                        <i class="icon-undo bigger-110"></i>
+                        重置
+                    </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        function OnSuccess(data) {
+            if (data.status == 1) {
+                alert("保存成功");
+            }
+            else {
+                alert(data.message);
+            }
+        }
+    </script>
+    }

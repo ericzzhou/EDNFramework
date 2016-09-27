@@ -1,0 +1,91 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@using EFramework.Entities.Domain.Account;
+@model PagedList<EDNF_Account_RoleEntity>
+<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>角色名</th>
+            <th class="hidden-480">角色描述</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RoleID</td>
+                <td>@item.RoleName</td>
+                <td class="hidden-480">@item.Description</td>
+                <td class="operation">
+                    <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                        <a title="编辑" href="@Url.Action("EditAccountRole", new { id = item.RoleID })" class="green btn_edit" data-param="@item.RoleID">
+                            <i class="icon-pencil bigger-130"></i>
+                        </a>
+                        @if (!WorkContext.URIds.Contains(item.RoleID))
+                        {
+                            <a href="javascript:;" title="删除" class="red btn_del" data-param="@item.RoleID">
+                                <i class="icon-trash bigger-130"></i>
+                            </a>
+                        }
+                        <a href="@Url.Action("roleusers", "Security", new { area = "admin", roleId = item.RoleID })" title="角色用户管理" class="red">
+                            <i class="icon-user bigger-130"></i>
+                        </a>
+                    </div>
+
+                    <div class="visible-xs visible-sm hidden-md hidden-lg">
+                        <div class="inline position-relative">
+                            <button data-toggle="dropdown" class="btn btn-minier btn-yellow dropdown-toggle">
+                                <i class="icon-caret-down icon-only bigger-120"></i>
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                <li>
+                                    <a title="编辑" data-rel="tooltip" class="tooltip-success btn_edit" href="@Url.Action("EditAccountRole", new { id = item.RoleID })" data-original-title="编辑" data-param="@item.RoleID">
+                                        <span class="green">
+                                            <i class="icon-edit bigger-120"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                @if (!WorkContext.URIds.Contains(item.RoleID))
+                                {
+                                    <li>
+                                        <a title="删除" data-rel="tooltip" class="tooltip-error btn_del" href="javascript:;" data-original-title="删除" data-param="@item.RoleID">
+                                            <span class="red">
+                                                <i class="icon-trash bigger-120"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                }
+
+                                <li>
+                                    <a title="角色用户管理" data-rel="tooltip" class="tooltip-error" href="@Url.Action("roleusers", "Security", new { area = "admin", id = item.RoleID })" data-original-title="角色用户管理">
+                                        <span class="red">
+                                            <i class="icon-user bigger-120"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr> 
+        }
+    </tbody>
+</table>
+
+<div>
+    <div style="float: left; width: 50%">共 @Model.TotalPageCount 页 @Model.TotalItemCount 条记录，当前为第 @Model.CurrentPageIndex 页</div>
+    <div class="dataTables_paginate paging_bootstrap">
+        @Ajax.Pager(Model, new PagerOptions
+{
+    PageIndexParameterName = "pageIndex",
+    CurrentPagerItemWrapperFormatString = "<li class=\"active\"><a href=\"javascript:;\">{0}</a></li>",
+    PagerItemWrapperFormatString = "<li>{0}</li>",
+    ContainerTagName = "ul",
+    CssClass = "pagination",
+    PrevPageText = "«",
+    NextPageText = "»"
+}, new MvcAjaxOptions { UpdateTargetId = "configs", DataFormId = "searchForm" }, new { style = "float:right" })
+    </div>
+</div>

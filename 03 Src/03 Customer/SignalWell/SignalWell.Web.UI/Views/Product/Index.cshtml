@@ -1,0 +1,79 @@
+﻿@using DotNet.Framework.Core.Extends;
+@using DotNet.Framework.MVC.Extend.Extends;
+
+@{
+    ViewBag.Title = "产品中心";
+    var article = Html.EDNFHelper_Article(106);
+    var category = Html.EDNFHelper_ProductCategories(0, " WHERE [Domain]='product' AND (ParentId IS NULL OR ParentId = 0) ");
+}
+
+@section bodyleft{
+
+    <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h" style="height: auto">
+                @foreach (var item in category)
+                {
+                    <div class="nov m_l l">
+                        <ul>
+                            <li><a href="@Url.Action("list", new { cid = item.ClassID })" onclick="showhide(@item.ClassID)" class="a">    <img id="@("img_" + item.ClassID)" style="padding-left:2px;" src="/Content/images/bg09.png" />
+                                <b>@item.ClassName</b></a></li>
+                        </ul>
+                    </div>
+                    var cats = Html.EDNFHelper_ProductCategories(0, " WHERE ParentId = " + item.ClassID + " ");
+                    foreach (var c in cats)
+                    {
+                    <div  class="nov m_l l body_@(item.ClassID)  hide">
+                        <ul>
+                            <li><a href="@Url.Action("listview", "product", new { cc = c.ClassID })"  class="a hover" ><span class="db tingico liico0"></span>@c.ClassName</a> </li>
+
+                        </ul>
+                    </div>
+             
+                    }
+                }
+
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" colspan="2" class="right_top" align="left"><span style="float:right; font-size:14px">当前位置：<a  href="/" style=" color:#FFFFFF; text-decoration:none">首页</a> >> <a href="/product/" style=" color:#FFFFFF; text-decoration:none">产品中心</a> >> @article.Title </span> @article.Title</td>
+    </tr>
+    <tr>
+        <td>&nbsp;
+        </td>
+    </tr>
+
+    <tr>
+        <td height="450" valign="top" align="left">
+            @Html.Raw(article.Description)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="pager"></td>
+    </tr>
+</table>
+
+
+<script type="text/javascript">
+    @* function showhide(id) {
+        var obj = ".body_" + id;
+        if ($(obj).hasClass("hide")) {
+            $(obj).removeCss("hide");
+            $("#img_" + id).attr("src", "/Content/images/bg10.png");
+        }
+        else {
+            $("#img_" + id).attr("src", "/Content/images/bg09.png");
+            $(obj).addCss("hide");
+        }
+    }
+    $(function () {
+        showhide(@ViewBag.CID)
+    });*@
+</script>

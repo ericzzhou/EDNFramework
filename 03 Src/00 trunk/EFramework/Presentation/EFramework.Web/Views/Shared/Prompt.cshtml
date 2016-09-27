@@ -1,0 +1,129 @@
+﻿@model EFramework.Web.Framework.PromptModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>消息提示-@{@WorkContext.SiteTitle}</title>
+    
+    <meta name="keywords" content="@WorkContext.SEOKeyword" />
+    <meta name="description" content="@WorkContext.SEODescription" />
+    
+    
+    <link href="@{@WorkContext.CSSDir}/all.css" rel="stylesheet" type="text/css" />
+    @if (Model.IsAutoBack)
+    {
+        if (Model.CountdownModel == 0)
+        {
+     <meta http-equiv="refresh" content="@Model.CountdownTime;URL=@Model.BackUrl"/>
+        }
+        else
+        {
+    <script type="text/javascript">
+        window.onload = function(){   
+            var time = @Model.CountdownTime; //设置时间为几秒   
+            var timer = document.getElementById('timer'); //获取ID为timer的对象   
+            timer.innerHTML = time; //初始化显示秒数   
+            time = time - 1;   
+            var g = window.setInterval(function(){   
+                if(time<0){   
+                    window.clearTimeout(g); //清除动画   
+                    window.location.href = '@Model.BackUrl'; //跳转到指定地址   
+            //window.history.back(-1); //后退   
+        } else {   
+            showTime();   
+        }   
+        },1000);   
+            //显示函数   
+            function showTime(){   
+                timer.innerHTML = time;   
+                time--;   
+            }      
+        };
+    </script>
+        }
+    }
+</head>
+
+<body id="body">
+    <div id="topInfo">
+        <div class="box">
+            <div class="left">您好,欢迎访问 @WorkContext.SiteTitle</div>
+            <div class="right">
+            @if (WorkContext.Uid < 1)
+            {
+                <a href="@Url.Action("Login", "Account", new RouteValueDictionary { { "returnUrl", WorkContext.Url } })" class="A_b">[登录]</a>
+                <a href="@Url.Action("Register", "Account")" class="A_b">[注册]</a>
+            }
+            else
+            {
+                 @:您好 @WorkContext.NickName 
+                <a href="@Url.Action("Logout", "Account")" class="A_b">[退出]</a>
+                
+                <a href="@Url.Action("OrderList", "UCenter")" class="A_b">[我的订单]</a>
+            }
+            <a href="@Url.Action("Index", "ShopCart")" class="A_b">[购物车(@WorkContext.SCProductCount)]</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="bigBox">
+        <div class="box" id="header">
+            <a href="#" id="logo" class="left"><img src="@{@WorkContext.ImageDir}/logo.jpg" /></a>
+            <div id="search" class="right">
+                <input type="text" id="searchWord" value="@WorkContext.SearchWord" />
+                <input type="image" src="@{@WorkContext.ImageDir}/searchBT.jpg" class="bt_b" onclick="window.location.href = '/search/?word='+encodeURIComponent(document.getElementById('searchWord').value)"/>
+                <div class="clear">
+            </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="bigBox" id="nav">
+        <ul class="box">
+            
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="box" id="content">
+            <div class="bilB" style="padding:5% 5% 5% 320px;">
+
+    <div>
+    <h5>@Html.Raw(Model.Message)</h5>
+    @if (Model.IsAutoBack)
+    {
+    <p>如果您不做出选择，将在@{if (Model.CountdownModel == 0)
+                    {@Model.CountdownTime}
+                    else
+                    {<span id="timer">@Model.CountdownTime</span>}}秒后自动返回</p>
+    }
+    @if (Model.IsShowBackLink)
+    {
+        <a href="@Model.BackUrl">←点击返回</a>
+    }
+    </div>
+
+             </div>
+    </div>
+       <div id="footer" class="box">
+        <div class="boxInner">
+        
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="links">
+           
+        </div>
+        <div style=" text-align:center;">
+            <br />
+            
+        </div>
+        @Html.Raw(WorkContext.ExecuteDetail)
+        </div>
+
+</body>
+</html>

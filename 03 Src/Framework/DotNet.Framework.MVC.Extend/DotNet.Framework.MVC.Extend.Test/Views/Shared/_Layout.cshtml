@@ -1,0 +1,39 @@
+﻿@using DotNet.Framework.MVC.Extend;
+@using DotNet.Framework.MVC.Extend.Extends;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/FlashPic.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>我的 MVC 应用程序</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                    <li>@Html.ActionLink("关于", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            @Html.Raw(Html.GenerateSlide("main", "boxW", "box", 1, "/Content/images/nei_07.jpg"))
+            @RenderBody()
+        </div>
+        <div id="footer">
+        </div>
+      
+    </div>
+
+    @Html.Raw(Html.EDNFHelper_FloatAD_Left())
+    @Html.Raw(Html.EDNFHelper_FloatAD_Right())
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.JobHost", "DotNet.Framework.JobHost\DotNet.Framework.JobHost.csproj", "{8A0F9F2A-597F-4628-ADCE-2C9A5CD1FD64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.JobInterface", "DotNet.Framework.JobInterface\DotNet.Framework.JobInterface.csproj", "{0BD67E14-1257-4F52-866C-B18E490AB94A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.JobTest", "DotNet.Framework.JobTest\DotNet.Framework.JobTest.csproj", "{6E085885-14D0-484D-8C98-E7092DD946EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.JobTestHost", "DotNet.Framework.JobTestHost\DotNet.Framework.JobTestHost.csproj", "{57B289CC-C762-49DF-8FCB-9A8C349F2C2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.dbJob", "DotNet.Framework.dbJob\DotNet.Framework.dbJob.csproj", "{1EE63AEF-5276-4DF4-9AC9-54A726C9E9D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.JobDeploymentTool", "DotNet.Framework.JobDeploymentTool\DotNet.Framework.JobDeploymentTool.csproj", "{DDBC55F5-777B-45E5-A352-8A1383CAAC51}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs37
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DotNet.Framework.JobHost\\DotNet.Framework.JobHost.csproj
+		SccProjectName1 = DotNet.Framework.JobHost
+		SccLocalPath1 = DotNet.Framework.JobHost
+		SccProjectUniqueName2 = DotNet.Framework.JobInterface\\DotNet.Framework.JobInterface.csproj
+		SccProjectName2 = DotNet.Framework.JobInterface
+		SccLocalPath2 = DotNet.Framework.JobInterface
+		SccProjectUniqueName3 = DotNet.Framework.JobTest\\DotNet.Framework.JobTest.csproj
+		SccProjectName3 = DotNet.Framework.JobTest
+		SccLocalPath3 = DotNet.Framework.JobTest
+		SccProjectUniqueName4 = DotNet.Framework.JobTestHost\\DotNet.Framework.JobTestHost.csproj
+		SccProjectName4 = DotNet.Framework.JobTestHost
+		SccLocalPath4 = DotNet.Framework.JobTestHost
+		SccProjectUniqueName5 = DotNet.Framework.dbJob\\DotNet.Framework.dbJob.csproj
+		SccProjectName5 = DotNet.Framework.dbJob
+		SccLocalPath5 = DotNet.Framework.dbJob
+		SccProjectUniqueName6 = DotNet.Framework.JobDeploymentTool\\DotNet.Framework.JobDeploymentTool.csproj
+		SccProjectName6 = DotNet.Framework.JobDeploymentTool
+		SccLocalPath6 = DotNet.Framework.JobDeploymentTool
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A0F9F2A-597F-4628-ADCE-2C9A5CD1FD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A0F9F2A-597F-4628-ADCE-2C9A5CD1FD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A0F9F2A-597F-4628-ADCE-2C9A5CD1FD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A0F9F2A-597F-4628-ADCE-2C9A5CD1FD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BD67E14-1257-4F52-866C-B18E490AB94A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD67E14-1257-4F52-866C-B18E490AB94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD67E14-1257-4F52-866C-B18E490AB94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD67E14-1257-4F52-866C-B18E490AB94A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E085885-14D0-484D-8C98-E7092DD946EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E085885-14D0-484D-8C98-E7092DD946EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E085885-14D0-484D-8C98-E7092DD946EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E085885-14D0-484D-8C98-E7092DD946EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57B289CC-C762-49DF-8FCB-9A8C349F2C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B289CC-C762-49DF-8FCB-9A8C349F2C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B289CC-C762-49DF-8FCB-9A8C349F2C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B289CC-C762-49DF-8FCB-9A8C349F2C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE63AEF-5276-4DF4-9AC9-54A726C9E9D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE63AEF-5276-4DF4-9AC9-54A726C9E9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE63AEF-5276-4DF4-9AC9-54A726C9E9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE63AEF-5276-4DF4-9AC9-54A726C9E9D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDBC55F5-777B-45E5-A352-8A1383CAAC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBC55F5-777B-45E5-A352-8A1383CAAC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBC55F5-777B-45E5-A352-8A1383CAAC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBC55F5-777B-45E5-A352-8A1383CAAC51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

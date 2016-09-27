@@ -1,0 +1,134 @@
+@using Webdiyer.WebControls.Mvc
+@using DotNet.Framework.Core.Extends;
+@using DotNet.Framework.MVC.Extend.Extends;
+
+@{
+    ViewBag.Title = ViewBag.CategoryName ?? "产品中心";
+
+    var categories = ViewBag.categories as IList<SignalWell.Web.UI.Models.EDNF_Product_Class>;
+    var IDList = ViewBag.IDList;
+    var products = ViewBag.Products as IList<SignalWell.Web.UI.Models.Entity_Product_Item_Pager>;
+    int TotalCount = Convert.ToInt32(ViewBag.TotalCount);
+    int PageIndex = Convert.ToInt32(ViewBag.PageIndex);
+    int PageSize = Convert.ToInt32(ViewBag.PageSize);
+
+}
+
+@section bodyleft{
+
+    <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h" style="height: auto">
+                @foreach (var ID in IDList)
+                {
+                    foreach (var item in categories.Where(x => x.ClassID == ID))
+                    {
+             
+                    <div class="nov m_l l">
+                        <ul>
+                            <li><a href="javascript:;" onclick="showhide(@ID)" class="a"><img id="@("img_"+ID)" style="padding-left:20px;" src="/Content/images/bg09.png" />  <b>@item.ClassName</b></a></li>
+
+
+                        </ul>
+                    </div>
+                    }
+                    foreach (var item in categories.Where(x => x.ParentId == ID))
+                    {
+                    <div  class="nov m_l l body_@(ID)  hide">
+                        <ul>
+                            <li><a href="@Url.Action("product", "home", new { id = item.ClassID, cid = ViewBag.leftid, title = Request["title"] })"  class="a hover" ><span class="db tingico liico0"></span>@item.ClassName  @item.ClassID  @ID</a> </li>
+
+                        </ul>
+                    </div>
+             
+                    }
+                }
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+
+    
+}
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" colspan="2" class="right_top">@ViewBag.CategoryName</td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr>
+        <td height="450" valign="top">
+            @foreach (var item in products)
+            {
+                <table border="0" width="180" style="float: left" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td class="plist_img" align="center">
+                            <a href="@Url.Action("pdetails", "home", new { title = Request["title"], cid = Request["cid"], id = item.ID })">
+                                <img src="@item.ImageUrl" />
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="plist_font" height="30" align="center" width="180">
+                            <h3 style="margin-top: 0; text-align: center; line-height: 30px;">
+                                <a href="@Url.Action("pdetails", "home", new { title = Request["title"], cid = Request["cid"], id = item.ID })">
+                                    @item.PName
+                                </a>
+                            </h3>
+                            @item.Summary.ClipString(500, "...")
+                        </td>
+                    </tr>
+                </table>
+
+            }
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="pager">
+            @Html.Pager(TotalCount, PageSize, PageIndex, "product", "home", new PagerOptions
+       {
+           PageIndexParameterName = "page",
+           ContainerTagName = "ul",
+           CurrentPagerItemWrapperFormatString = "<li class=\"active\">{0}</li>",
+           NumericPagerItemWrapperFormatString = "<li>{0}</li>",
+           NavigationPagerItemWrapperFormatString = "<li>{0}</li>",
+           AlwaysShowFirstLastPageNumber = true,
+           AutoHide = false,
+           //CssClass = "pager"
+
+       }, null, null, null)
+            @* @(Html.Pager(Convert.ToInt32(ViewBag.TotalCount)
+                 , Convert.ToInt32(ViewBag.PageSize), Convert.ToInt32(ViewBag.PageIndex)
+                 , "product", "home", new Webdiyer.WebControls.Mvc.PagerOptions
+                {
+                    ContainerTagName = "span",
+                    PageIndexParameterName = "id",
+                    NumericPagerItemWrapperFormatString = "<span class=\"jn_fy_num\">{0}</span>",
+                    AlwaysShowFirstLastPageNumber = true,
+                    HorizontalAlign = "right"
+                }, null, null, new { Style = "float:right" }))*@
+        </td>
+    </tr>
+</table>
+
+
+<script type=text/javascript>
+    function showhide(id) {
+        var obj = ".body_" + id;
+        if ($(obj).hasClass("hide")) {
+            $(obj).removeCss("hide");
+            $("#img_" + id).attr("src", "/Content/images/bg10.png");
+        }
+        else {
+            $("#img_" + id).attr("src", "/Content/images/bg09.png");
+            $(obj).addCss("hide");
+        }
+    }
+
+</script>

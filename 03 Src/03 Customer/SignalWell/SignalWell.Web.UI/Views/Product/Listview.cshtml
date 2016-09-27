@@ -1,0 +1,121 @@
+﻿@using Webdiyer.WebControls.Mvc
+@using DotNet.Framework.Core.Extends;
+@using DotNet.Framework.MVC.Extend.Extends;
+
+@{
+    ViewBag.Title = ViewBag.c2Name + " - " + ViewBag.CName;
+    int cid = ViewBag.CID;
+    var category = Html.EDNFHelper_ProductCategories(0, " WHERE [Domain]='product' AND (ParentId IS NULL OR ParentId = 0) ");
+    var products = ViewBag.Products as IList<SignalWell.Web.UI.Models.Entity_Product_Item_Pager>;
+    int TotalCount = Convert.ToInt32(ViewBag.TotalCount);
+    int PageIndex = Convert.ToInt32(ViewBag.PageIndex);
+    int PageSize = Convert.ToInt32(ViewBag.PageSize);
+    
+}
+
+@section bodyleft{
+
+    <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h" style="height: auto">
+                @foreach (var item in category)
+                {
+                    <div class="nov m_l l">
+                        <ul>
+                            <li><a href="@Url.Action("list", new { cid = item.ClassID })" onclick="showhide(@item.ClassID)" class="a">
+             <img id="@("img_" + item.ClassID)" style="padding-left:2px;" src="/Content/images/bg09.png" />
+                                <b>@item.ClassName</b></a></li>
+                        </ul>
+                    </div>
+                    var cats = Html.EDNFHelper_ProductCategories(0, " WHERE ParentId = " + item.ClassID + " ");
+                    foreach (var c in cats)
+                    {
+                    <div  class="nov m_l l body_@(item.ClassID)  hide">
+                        <ul>
+                            <li><a href="@Url.Action("listview", "product", new { cid = cid, cc = c.ClassID })"  class="a hover" ><span class="db tingico liico0"></span>@c.ClassName</a> </li>
+
+                        </ul>
+                    </div>
+             
+                    }
+                }
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" colspan="2" class="right_top" align="left"><span style="float:right; font-size:14px">当前位置：<a href="/" style=" color:#FFFFFF; text-decoration:none">首页</a> >> <a href="/product/" style=" color:#FFFFFF; text-decoration:none">产品中心</a> >> @ViewBag.CName >> @ViewBag.c2Name </span>  @ViewBag.c2Name </td>
+    </tr>
+    <tr>
+        <td>&nbsp;
+        </td>
+    </tr>
+
+    <tr>
+        <td height="450" valign="top" align="left">
+            @foreach (var item in products)
+            {
+                <table border="0" width="180" style="float: left" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td class="plist_img" align="center">
+                            <a href="@Url.Action("details", "product", new { cid = Request["cid"], id = item.ID, cc = ViewBag.cc })">
+                                <img src="@item.ImageUrl" />
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="plist_font" height="30" align="center" width="180">
+                            <h3 style="margin-top: 0; text-align: center; line-height: 30px;">
+                                <a href="@Url.Action("details", "product", new { cid = Request["cid"], id = item.ID, cc = ViewBag.cc })">
+                                    @item.PName
+                                </a>
+                            </h3>
+                            @item.Summary.ClipString(500, "...")
+                        </td>
+                    </tr>
+                </table>
+
+            }
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="pager">
+            @Html.Pager(TotalCount, PageSize, PageIndex, "listview", "product", new PagerOptions
+       {
+           PageIndexParameterName = "page",
+           ContainerTagName = "ul",
+           CurrentPagerItemWrapperFormatString = "<li class=\"active\">{0}</li>",
+           NumericPagerItemWrapperFormatString = "<li>{0}</li>",
+           NavigationPagerItemWrapperFormatString = "<li>{0}</li>",
+           AlwaysShowFirstLastPageNumber = true,
+           AutoHide = false,
+           //CssClass = "pager"
+
+       }, null, null, null)
+        </td>
+    </tr>
+</table>
+
+
+<script type="text/javascript">
+    function showhide(id) {
+        var obj = ".body_" + id;
+        if ($(obj).hasClass("hide")) {
+            $(obj).removeCss("hide");
+            $("#img_" + id).attr("src", "/Content/images/bg10.png");
+        }
+        else {
+            $("#img_" + id).attr("src", "/Content/images/bg09.png");
+            $(obj).addCss("hide");
+        }
+    }
+
+    showhide(@cid);
+    
+</script>

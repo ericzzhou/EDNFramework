@@ -1,0 +1,207 @@
+﻿@{
+    Layout = null;
+    string resourcePath = "/Content";
+}
+@using DotNet.Framework.MVC.Extend;
+@using DotNet.Framework.MVC.Extend.Extends;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>网站地图 - 广州市新锘威智能科技有限公司</title>
+    <link href="@resourcePath/css/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@resourcePath/js/jquery1102.js"></script>
+    <script type="text/javascript" src="@resourcePath/js/FlashPic.js"></script>
+    <style type="text/css">
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #0f6d39;
+            background-repeat: repeat-x;
+            background-image: url(@(resourcePath)/images/nei_05.jpg);
+        }
+
+        body, td, th {
+            font-family: "微软雅黑";
+            color: #FFF;
+            font-size: 12px;
+        }
+       h2 {line-height:40px;text-align:center;height:40px;}
+        .mapwidth {
+            width: 230px; float:left;
+        background-color: #0f6d39; margin-left:3px; margin-right:3px;
+        }
+        .right_zi a {
+        color: #fff;
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <table width="990" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="101">
+                 @Html.Partial("_NavPartial")
+            </td>
+        </tr>
+        <tr>
+            <td height="201" align="center" valign="bottom" id="tPic">
+                @Html.Partial("_SlidePartial")
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#20593a">
+                <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td height="50" class="right_top">网站地图</td>
+                                </tr>
+                                <tr>
+                                    <td class="right_zi">
+                                        <div align="left">
+                                            <div class="mapwidth">
+                                                <h2>&nbsp;关于我们</h2> 
+												<div class="handle_a">
+        <div class="head_bg" >
+            <div class="cl top_h"  style="height:auto">
+                                         <div class="nov m_l l">      
+									<ul>
+									 @foreach (var item in Html.EDNFHelper_Articles(0, "WHERE ClassID=41 ORDER BY Sequence ASC, ContentID desc"))
+                                                {
+                                                 
+                    <li> <a class="a hover"  target="_blank" href="@Url.Action("about", "home", new { id = item.ContentID, cid = item.ClassID })"> <span class="db tingico liico0"></span> @item.Title</a></li>
+                                                }
+												
+												</ul>
+    </div>
+                                                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+                                            </div>
+                                            <div class="mapwidth">
+                                                  <h2>&nbsp;能源管理</h2> 
+  <div class="handle_a">
+        <div class="head_bg" >
+            <div class="cl top_h"  style="height:auto">
+                                         <div class="nov m_l l">      
+									<ul>
+                                                @foreach (var item in Html.EDNFHelper_ProductCategories(0, "WHERE ParentId=5"))
+                                                {
+                                                  <li><a  class="a hover" target="_blank" href="@Url.Action("product", "home", new { id = item.ClassID, cid = item.ParentId, title = item.ClassName })"> <span class="db tingico liico0"></span> @item.ClassName</a></li>
+                                                    
+                                                    
+                                                }
+												</ul>
+    </div>
+                                                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+                                                 <h2>&nbsp;楼宇自控</h2> 
+												   <div class="handle_a">
+        <div class="head_bg" >
+            <div class="cl top_h"  style="height:auto">
+                                         <div class="nov m_l l">      
+									<ul>
+                                                @foreach (var item in Html.EDNFHelper_ProductCategories(0, "WHERE ParentId=6"))
+                                                {
+                                                  <li>  <a  class="a hover" target="_blank" href="@Url.Action("product", "home", new { id = item.ClassID, cid = item.ParentId, title = item.ClassName })"> <span class="db tingico liico0"></span> @item.ClassName</a></li>
+                                                    
+                                                    
+                                                }
+												
+												</ul>
+    </div>
+                                                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+                                            </div>
+                                            <div class="mapwidth">
+                                                <h2>&nbsp;经典案例</h2>
+												   <div class="handle_a">
+        <div class="head_bg" >
+            <div class="cl top_h"  style="height:auto">
+                                         <div class="nov m_l l">      
+									<ul>
+                                                @foreach (var item in Html.EDNFHelper_ProductCategories(0, "WHERE ParentId=18"))
+                                                {
+                                                    <li> <a class="a hover" target="_blank" href="@Url.Action("product", "home", new { id = item.ClassID, cid = item.ParentId, title = item.ClassName })"> <span class="db tingico liico0"></span> @item.ClassName</a></li>
+                                                    
+ 
+                                                }
+</ul>
+    </div>
+                                                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+                                            </div>
+                                            <div class="mapwidth">
+                                                <h2>&nbsp;服务与支持</h2>				
+				  <div class="handle_a">
+        <div class="head_bg" >
+            <div class="cl top_h"  style="height:auto">
+                                         <div class="nov m_l l">      
+									<ul>
+                                                @foreach (var item in Html.EDNFHelper_Articles(0, "WHERE ClassID=49 ORDER BY Sequence ASC, ContentID desc"))
+                                                {
+                                                 <li> <a class="a hover" target="_blank" href="@Url.Action("about", "home", new { id = item.ContentID, cid = item.ClassID })"> <span class="db tingico liico0"></span> @item.Title</a></li>
+                                                    
+                                                   
+                                                }
+												</ul>
+    </div>
+                                                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+
+                                                <h2>&nbsp;联系我们</h2>
+												   <div class="handle_a">
+        <div class="head_bg" >
+            <div class="cl top_h"  style="height:auto">
+                                         <div class="nov m_l l">      
+									<ul>
+                                                @foreach (var item in Html.EDNFHelper_Articles(0, "WHERE ClassID=47 ORDER BY Sequence ASC, ContentID desc"))
+                                                {
+                                                  <li> <a class="a hover" target="_blank" href="@Url.Action("about", "home", new { id = item.ContentID, cid = item.ClassID })"> <span class="db tingico liico0"></span> @item.Title</a></li>
+                                                    
+                                                   
+                                                }
+												</ul>
+    </div>
+                                                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+
+                                            </div>
+                                            <div style="clear: both;"></div>
+                                        </div>
+                                        <p></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="50" bgcolor="#1d642f">版权所有：广州市新锘威智能科技有限公司  粤ICP备14010396号  技术支持：万博网络 </td>
+        </tr>
+    </table>
+</body>
+
+</html>

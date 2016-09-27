@@ -1,0 +1,18 @@
+﻿
+GO
+
+CREATE TABLE [EDNF_SYS_SingleJumpAD](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](500) NULL,
+	[Width] [int] NOT NULL,
+	[Height] [int] NOT NULL,
+	[Enable] [bit] NULL DEFAULT(0),
+	[ContentType] [varchar](10) NULL,
+	[Content] [nvarchar](4000) NULL
+ CONSTRAINT [PK_EDNF_SYS_SingleJumpAD_ID] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Roles";
+}
+@using Webdiyer.WebControls.Mvc;
+@using EFramework.Entities.Domain.Account;
+@model PagedList<EDNF_Account_RoleEntity>
+@section bread
+{
+     <li><a href="@Url.Action("roles", "Security")">角色管理</a></li>
+    <li class="active">用户角色</li>
+}
+
+
+<div class="page-content">
+    <div class="page-header">
+        <h1>角色管理
+		@*<small>
+            <i class="icon-double-angle-right"></i>
+            overview &amp; stats
+        </small>*@
+        </h1>
+    </div>
+    <!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive" id="configs">
+                @Html.Partial("_AjaxRolesPartial", Model)
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+@section scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+    <script type="text/javascript">
+        $(document).on("click", ".btn_del", function () {
+            var id = $(this).attr("data-param");
+            if (id <= 0) {
+                alert("编号错误");
+                return;
+            }
+            confirm("确定要删除我灭？", function () {
+
+                var url = '@Url.Action("DeleteConfig")';
+                $.post(url, { id: id }, function (data) {
+
+                    if (data.status == 1) {
+                        alert("删除成功");
+                        $("#searchForm").submit();
+                    }
+                    else {
+                        alert(data.message);
+
+                    }
+                });
+            });
+
+        });
+
+
+    </script>
+}

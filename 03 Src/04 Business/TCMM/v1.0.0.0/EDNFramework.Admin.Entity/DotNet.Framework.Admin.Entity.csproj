@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44DEB649-B841-43BE-AD0C-8C90A898DF9E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNet.Framework.Admin.Entity</RootNamespace>
+    <AssemblyName>DotNet.Framework.Admin.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNet.Framework.DataAccess">
+      <HintPath>..\..\..\..\packages\EDNFramework\DotNet.Framework.DataAccess\v2.1.0.2\DotNet.Framework.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EDNFramework_Account\Entity_Department.cs" />
+    <Compile Include="EDNFramework_Account\Entity_Permission.cs" />
+    <Compile Include="EDNFramework_Account\Entity_PermissionAction.cs" />
+    <Compile Include="EDNFramework_Account\Entity_PermissionCategories.cs" />
+    <Compile Include="EDNFramework_Account\Entity_PermissionTree.cs" />
+    <Compile Include="EDNFramework_Account\Entity_Role.cs" />
+    <Compile Include="EDNFramework_Account\Entity_RolePermissionsAction.cs" />
+    <Compile Include="EDNFramework_Account\Entity_SingIn.cs" />
+    <Compile Include="EDNFramework_Account\Entity_User.cs" />
+    <Compile Include="EDNFramework_Account\ViewQueryCondition\Entity_PermissionAction_Condition.cs" />
+    <Compile Include="EDNFramework_Account\ViewQueryCondition\Entity_Role_Users_Condition.cs" />
+    <Compile Include="EDNFramework_CMS\Entity_ClassType.cs" />
+    <Compile Include="EDNFramework_CMS\Entity_Slide.cs" />
+    <Compile Include="EDNFramework_CMS\Entity_Content.cs" />
+    <Compile Include="EDNFramework_CMS\Entity_ContentClass.cs" />
+    <Compile Include="EDNFramework_CMS\Entity_FLinks.cs" />
+    <Compile Include="EDNFramework_CMS\Entity_Search.cs" />
+    <Compile Include="EDNFramework_CMS\ViewQueryCondition\Entity_Content_Condition.cs" />
+    <Compile Include="EDNFramework_CMS\ViewQueryCondition\Entity_Slide_Condition.cs" />
+    <Compile Include="EDNFramework_Product\Entity_Product_Class.cs" />
+    <Compile Include="EDNFramework_Product\Entity_Product_Item.cs" />
+    <Compile Include="EDNFramework_Product\ViewQueryCondition\Entity_Product_Condition.cs" />
+    <Compile Include="EDNFramework_SYS\Entity_ConfigContent.cs" />
+    <Compile Include="EDNFramework_SYS\Entity_ErrorLog.cs" />
+    <Compile Include="EDNFramework_SYS\ViewQueryCondition\Entity_ErrorLog_Condition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,60 @@
+@using Webdiyer.WebControls.Mvc
+@{
+    ViewBag.Title = "新闻中心";
+    int TotalCount = Convert.ToInt32(ViewBag.TotalCount);
+    int PageIndex = Convert.ToInt32(ViewBag.PageIndex);
+    int PageSize = Convert.ToInt32(ViewBag.PageSize);
+    var news = ViewBag.News as List<SignalWell.Web.UI.Models.EDNF_CMS_Content>;
+}
+@section bodyleft{
+    <table width="100%" border="0" cellspacing="14" cellpadding="0">
+        <tr>
+            <td height="30" bgcolor="#55a002" class="left_zi"><a href="@Url.Action("list", "news", new { id = 58 })" class="a"><b>公司新闻</b></a></td>
+        </tr>
+        <tr>
+            <td height="30" bgcolor="#55a002" class="left_zi"><a href="@Url.Action("list", "news", new { id = 59 })" class="a"><b>业内新闻</b></a></td>
+        </tr>
+    </table>
+}
+<style type="text/css">
+    .right_zi a {
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" class="right_top">新闻中心</td>
+    </tr>
+    <tr>
+        <td class="right_zi">
+            <table>
+                @foreach (var item in news)
+                {
+                    <tr>
+                        <td width="580"><a href="@Url.Action("details", "news", new { id = item.ContentID })">@item.Title</a></td>
+                        <td>@item.CreatedDate</td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="2" class="pager">
+                        @Html.Pager(TotalCount, PageSize, PageIndex, "index", "news", new PagerOptions
+       {
+           PageIndexParameterName = "page",
+           ContainerTagName = "ul",
+           CurrentPagerItemWrapperFormatString = "<li class=\"active\">{0}</li>",
+           NumericPagerItemWrapperFormatString = "<li>{0}</li>",
+           NavigationPagerItemWrapperFormatString = "<li>{0}</li>",
+           AlwaysShowFirstLastPageNumber = true,
+           AutoHide = false,
+           //CssClass = "pager"
+
+       }, null, null, null)
+                    </td>
+                </tr>
+
+            </table>
+            <p></p>
+        </td>
+    </tr>
+</table>

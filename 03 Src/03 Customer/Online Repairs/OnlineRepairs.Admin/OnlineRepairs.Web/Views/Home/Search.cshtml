@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+<div class="bs-example bs-example-standalone">
+    <div role="alert" class="alert alert-info alert-dismissible fade in">
+        <h4>提示!</h4>
+        <p>输入要查询的订单号码。</p>
+        <p>
+            <input class="form-control" type="text" name="id" id="id" placeholder="输入要查询的订单号码" />
+        </p>
+        <p>
+            <input class="btn btn-default search" type="text" value="查询" />
+        </p>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $(".search").click(function () {
+                var key = $.trim($("#id").val());
+                if (key == '') {
+                    alert("请输入要查询的订单号");
+                    return;
+                }
+                else {
+                    location.href = '/home/details/' + key;
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@using Webdiyer.WebControls.Mvc;
+@using EFramework.Entities.Domain.ControlPanel;
+@model PagedList<SYS_ConfigContentEntity>
+@section bread
+{
+    <li><a href="@Url.Action("sysconfig", "controlpanel")">控制面板</a></li>
+    <li class="active">系统配置</li>
+}
+
+
+<div class="page-content">
+    <div class="page-header">
+        <h1>系统配置
+		@*<small>
+            <i class="icon-double-angle-right"></i>
+            overview &amp; stats
+        </small>*@
+        </h1>
+    </div>
+    <!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="row">
+                <div class="col-xs-12">
+                    @using (Html.BeginForm("SysConfig", "Controlpanel", new { pageIndex = "" }, FormMethod.Get, new { id = "searchForm", role = "form", @class = "form-inline" }))
+                    {
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="key" value="@ViewBag.Key" placeholder="项目">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="value" value="@ViewBag.Value" placeholder="值">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="search" class="btn btn-default ">
+                                <i class="ico-search"></i>
+                                检索</button>
+                        </div>}
+                   
+                    <div class="table-responsive" id="configs">
+                        @Html.Partial("_AjaxSysConfigPartial", Model)
+                    </div>
+                </div>
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div>
+    </div>
+    <!-- /.page-content -->
+
+    <!-- /.main-content -->
+</div>
+@section scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+    <script type="text/javascript">
+        $(document).on("click", ".btn_del", function () {
+            var id = $(this).attr("data-param");
+            if (id <= 0) {
+                alert("编号错误");
+                return;
+            }
+            confirm("确定要删除我灭？", function () {
+
+                var url = '@Url.Action("DeleteConfig")';
+                $.post(url, { id: id }, function (data) {
+
+                    if (data.status == 1) {
+                        alert("删除成功");
+                        $("#searchForm").submit();
+                    }
+                    else {
+                        alert(data.message);
+
+                    }
+                });
+            });
+
+        });
+
+
+    </script>
+}

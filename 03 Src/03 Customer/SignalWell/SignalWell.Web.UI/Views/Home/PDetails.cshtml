@@ -1,0 +1,53 @@
+@{
+        var categories = ViewBag.categories as IList<SignalWell.Web.UI.Models.EDNF_Product_Class>;
+    var IDList = ViewBag.IDList;
+
+    var product = ViewBag.Product as SignalWell.Web.UI.Models.Entity_Product_Item;
+ViewBag.Title = product.PName;
+}
+@section bodyleft{
+     <table width="100%" border="0" cellspacing="14" cellpadding="0">
+   	 <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h" style="height:auto">
+
+        @foreach (var ID in IDList)
+        {
+            foreach (var item in categories.Where(x => x.ClassID == ID))
+            {
+            <div class="nov m_l l">   
+                    <ul><li> <a href="javascript:;" class="a"> <b>@item.ClassName</b></a></li></ul>
+    </div>
+            }
+            foreach (var item in categories.Where(x => x.ParentId == ID))
+            {
+            
+           <div class="nov m_l l ">
+                    <ul> <li><a href="@Url.Action("product", "home", new { id = item.ClassID, cid = ViewBag.leftid, title = Request["title"] })"  class="a hover"   ><span class="db tingico liico0"></span> @item.ClassName</a></li> </ul>
+    </div>
+            }
+        }
+		
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+    </table>
+}
+<table width="98%" border="0" cellspacing="0" cellpadding="0" >
+    <tr>
+        <td height="50" class="right_top">@Html.Raw(product.PName)</td>
+    </tr>
+    <tr>
+        <td class="right_zi"  height="450" valign="top" >
+           <!-- <div style="text-align: center; width: 100%; margin: 0 auto;">
+                <img src="@product.ImageUrl" style="width:500px; " />
+            </div>-->
+            <br />
+            <div align="left">
+                @Html.Raw(product.Description)
+            </div>
+            <p></p>
+        </td>
+    </tr>
+</table>

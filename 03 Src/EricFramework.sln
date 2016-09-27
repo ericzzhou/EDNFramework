@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eric.Framework.Account", "Eric.Framework.Account\Eric.Framework.Account.csproj", "{05896196-5939-4C70-A139-8A66B398A202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eric.Framework.DBUtility", "Eric.Framework.DBUtility\Eric.Framework.DBUtility.csproj", "{9BE74C60-7B3A-4EF6-9065-F88F0DBE8B73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eric.Framework.CMS", "Eric.Framework.CMS\Eric.Framework.CMS.csproj", "{404693B8-49F6-46C9-A78D-B3C4C3754CD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E97FCCFB-2AE7-42AC-B782-D5B86E333F86}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs37
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Eric.Framework.Account\\Eric.Framework.Account.csproj
+		SccProjectName1 = Eric.Framework.Account
+		SccLocalPath1 = Eric.Framework.Account
+		SccProjectUniqueName2 = Eric.Framework.DBUtility\\Eric.Framework.DBUtility.csproj
+		SccProjectName2 = Eric.Framework.DBUtility
+		SccLocalPath2 = Eric.Framework.DBUtility
+		SccProjectUniqueName3 = Eric.Framework.CMS\\Eric.Framework.CMS.csproj
+		SccProjectName3 = Eric.Framework.CMS
+		SccLocalPath3 = Eric.Framework.CMS
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05896196-5939-4C70-A139-8A66B398A202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05896196-5939-4C70-A139-8A66B398A202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05896196-5939-4C70-A139-8A66B398A202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05896196-5939-4C70-A139-8A66B398A202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE74C60-7B3A-4EF6-9065-F88F0DBE8B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE74C60-7B3A-4EF6-9065-F88F0DBE8B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE74C60-7B3A-4EF6-9065-F88F0DBE8B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE74C60-7B3A-4EF6-9065-F88F0DBE8B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404693B8-49F6-46C9-A78D-B3C4C3754CD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404693B8-49F6-46C9-A78D-B3C4C3754CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404693B8-49F6-46C9-A78D-B3C4C3754CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404693B8-49F6-46C9-A78D-B3C4C3754CD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

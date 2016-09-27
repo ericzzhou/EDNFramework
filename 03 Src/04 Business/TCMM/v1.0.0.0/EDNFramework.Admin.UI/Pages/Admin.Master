@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="DotNet.Framework.Admin.UI.Pages.Admin" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%:DotNet.Framework.Admin.Business.EDNFramework_SYS.Business_ConfigContent.GetValueByKey(DotNet.Framework.Admin.Core.Config.SysConfig.SYS_WebSiteName)%></title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <%=Css %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frm" runat="server">
+        <%--<div style="padding-left: 1px; padding-right: 1px;">--%>
+            <asp:ContentPlaceHolder ID="cph" runat="server">
+            </asp:ContentPlaceHolder>
+       <%-- </div>--%>
+    </form>
+    <EDNFramework:AlertModal ID="AlertModal1" runat="server" />
+    <script src="<%:ResourcePath %>/Resource/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/json2.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/ednframework.lib.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/ednframework.lib.bindhelper.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/bootstrap.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Libs/jquery-ui/js/jquery-ui.min.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/pqgrid/pqgrid.min.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.message.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.modal.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.confirm.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/ednframework.lib.extend.js"></script>
+   
+    <%=Script %>
+     <asp:ContentPlaceHolder ID="floor" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
+

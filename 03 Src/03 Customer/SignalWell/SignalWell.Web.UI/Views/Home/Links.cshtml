@@ -1,0 +1,42 @@
+@{
+    ViewBag.Title = "友情链接";
+    var links = ViewBag.Links as IList<SignalWell.Web.UI.Models.EDNF_CMS_FLinks>;
+}
+@section bodyleft{
+    <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h">
+                <div class="nov m_l l">
+                     
+                    <ul>
+            <li><a href="javascript:;"  class="a hover" > <span class="db tingico liico0"></span><b>友情链接</b></a></li>
+      </ul>
+    </div>
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+}
+<style type="text/css">
+    .right_zi a {
+         color:#fff; text-decoration:none;
+    }
+</style>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" class="right_top">友情链接</td>
+    </tr>
+    <tr>
+        <td class="right_zi"  height="450" valign="top" >
+
+            <div align="left">
+                @foreach (var item in links)
+                {
+                    <a href="@item.LinkUrl" title="@item.LinkDesc" target="_blank">@item.Name</a>
+                    <text>&nbsp;</text>
+                }
+            </div>
+            <p></p>
+        </td>
+    </tr>
+</table>

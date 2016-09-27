@@ -1,0 +1,27 @@
+﻿@using DotNet.Framework.Admin.Entity.EDNFramework_Repairs;
+@model List<Entity_UserOrder>
+@{
+    ViewBag.Title = "我的订单";
+}
+@if (Model == null || Model.Count <= 0)
+{
+    <div class="bs-example bs-example-standalone">
+        <div role="alert" class="alert alert-info alert-dismissible fade in">
+            <h4>提示!</h4>
+            <p>您还没有创建过订单。</p>
+        </div>
+    </div>
+    return;
+}
+@foreach (var item in Model)
+{
+    <div class="list-group">
+        <a  href="@Url.Action("details", "home", new { id = @item.OrderNumber })" class="list-group-item @if (item.Statu == 3)
+                                                                                                   {<text>active</text>}">
+            @*<a href="#" class="list-group-item active">*@
+            <h4 class="list-group-item-heading">@(item.BrandName)(@item.Model)</h4>
+            <p class="list-group-item-text">@item.RepairsDescription</p>
+           @* <p class="list-group-item-text"><em>@item.NickName - @item.phone</em></p>*@
+        </a>
+    </div>
+}

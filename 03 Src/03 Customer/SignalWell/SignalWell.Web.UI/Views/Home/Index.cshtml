@@ -1,0 +1,368 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Description" />
+    <meta name="keywords" content="template, windows 8, website, design, download, metro ui, metro template" />
+    <link rel="icon" type="/Content/image/ico" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.00, minimum-scale=1.00">
+    <title>广州市新锘威智能科技有限公司</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/Content/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/tiles.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/accordion/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/autozoom/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/custom/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/panels/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/plugintemplate/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tileflip/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tilefliptext/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tilemosaic/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tileslide/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tileslidefx/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tileslideshow/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tiletemplate/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tiletwitter/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/plugins/tileweather/plugin.css" />
+
+    <style>
+        html {
+            background-color: #0F6D32;
+        }
+
+        #bgImage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -4;
+            min-width: 115%;
+            min-height: 100%;
+            -webkit-transition: margin-left 450ms linear;
+            -moz-transition: margin-left 450ms linear;
+            -o-transition: margin-left 450ms;
+            -ms-transition: margin-left 450ms;
+            transition: margin-left 450ms;
+        }
+
+        .tile {
+            -webkit-transition-property: box-shadow, margin-left, margin-top;
+            -webkit-transition-duration: 0.25s, 0.5s, 0.5s;
+            -moztransition-property: box-shadow, margin-left, margin-top;
+            -moz-transition-duration: 0.25s, 0.5s, 0.5s;
+            -o-transition-property: box-shadow, margin-left, margin-top;
+            -o-transition-duration: 0.25s, 0.5s, 0.5s;
+            -ms-transition-property: box-shadow, margin-left, margin-top;
+            -ms-transition-duration: 0.25s, 0.5s, 0.5s;
+            transition-property: box-shadow, margin-left, margin-top;
+            transition-duration: 0.25s, 0.5s, 0.5s;
+        }
+
+            .tile:hover {
+                outline: 1px solid #FFF;
+                -moz-box-shadow: 0 0 15px #CCC;
+                -webkit-box-shadow: 0 0 15px #CCC;
+                box-shadow: 0 0 15px #CCC;
+            }
+    </style>
+    <script type='text/javascript'>var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-30159978-1']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+    <!--[if IE]>
+    <script src="/Content/js/html5.js"></script>
+     <![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" language="javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/Content/js/html5.js"></script>
+	<![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/Content/js/html5.js"></script>
+    <![endif]-->
+    <!--[if !IE]>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<![endif]-->
+
+    <script type="text/javascript">window.jQuery || document.write('<\/script><script type="text/javascript" src="/Content/js/jquery1102.js"><\/script>')</script>
+    <script type="text/javascript" src="/content/js/plugins.js"></script>
+    <script>
+        scale = 145;
+        spacing = 10;
+        theme = 'theme_default';
+        $group.titles = ["Home", "Download", "Support"];
+        $group.spacingFull = [5, 5, 5];
+        $group.inactive.opacity = "1";
+        $group.inactive.clickable = "1";
+        $group.showEffect = 0;
+        $group.direction = "horizontal";
+        mouseScroll = "1";
+        siteTitle = '广州市新锘威智能科技有限公司';
+        siteTitleHome = 'Home';
+        showSpeed = 400;
+        hideSpeed = 300;
+        scrollSpeed = 550;
+
+        device = "desktop";
+        scrollHeader = "1";
+        disableGroupScrollingWhenVerticalScroll = "";
+
+        /*For background image*/
+        bgMaxScroll = "130";
+        bgScrollSpeed = "450";
+
+        /*For responsive */
+        autoRearrangeTiles = "1";
+        autoResizeTiles = "1";
+        rearrangeTreshhold = 3;
+
+        /*Locale */
+        lang = "en";
+        l_pageNotFound = "404 - Page not Found";
+        l_pageNotFoundDesc = "<h2 class='margin-t-0'>404 - Page not Found</h2>";
+        l_menu = "Menu";
+        l_goToFullSiteRedirect = "You'll be redirected to the full site";
+        panelDim = '0.6'; hidePanelOnClick = '1'; panelGroupScrolling = ''; pageTitles = new Array(); pageTitles['typography.php'] = 'Typography'; pageTitles['changelog.php'] = 'Changelog and Bugs'; pageTitles['features.php'] = 'Features'; pageTitles['about.php'] = 'About'; pageTitles['tutorials.php'] = 'Docs and Tutorials'; pageTitles['contact.php'] = 'Contact'; pageTitles['download.php'] = 'Download'; pageTitles['buytemplate.php'] = 'Buy the Metro UI Template'; pageTitles['demo.php'] = 'Demo sites and examples'; pageTitles['download-full.php'] = 'Download the full Metro UI template'; pageTitles['download-lite.php'] = 'Download the lite Metro UI template'; pageURL = new Array(); pageURL['typography.php'] = 'Typography'; pageURL['changelog.php'] = 'bugs'; pageURL['features.php'] = 'Features'; pageURL['about.php'] = 'about'; pageURL['tutorials.php'] = 'tutorials'; pageURL['contact.php'] = 'Contact'; pageURL['download.php'] = 'Download'; pageURL['buytemplate.php'] = 'buy'; pageURL['demo.php'] = 'demo';</script>
+
+    <script type="text/javascript" src="/Content/plugins/accordion/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/autozoom/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/panels/desktop.js"></script>
+    <script type="text/javascript" src="/Content/plugins/plugintemplate/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tileflip/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tilefliptext/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tilemedia/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tilemosaic/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tileslide/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tileslidefx/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tileslideshow/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tiletemplate/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tiletwitter/plugin.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tileweather/plugin.js"></script>
+    <script type="text/javascript" src="/Content/js/functions.js"></script>
+    <script type="text/javascript" src="/Content/js/main.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tilemedia/jquery.media.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tilemedia/jquery.metadata.js"></script>
+    <script type="text/javascript" src="/Content/plugins/tileweather/jquery.simpleWeather-2.1.2.min.js"></script>
+    <style>
+        #catchScroll {
+            background: rgb(30,30,30);
+            -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=00)';
+            filter: alpha(opacity=00);
+            -moz-opacity: 0;
+            -khtml-opacity: 0;
+            opacity: 0;
+        }
+    </style>
+    <noscript>
+        <style>
+            #tileContainer {
+                display: block;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" type="text/css" href="/Content/themes/theme_default/theme.css" />
+</head>
+<body class="full desktop">
+
+
+    <header>
+	<div id="headerWrapper"  style="position:fixed"  >
+		<div id="headerCenter" >
+			<div id="headerTitles">
+				<img src="/Content/images/logo.png">
+		    </div>
+		     <nav >
+      <a id="group0" style="  background:url(/Content/images/home.png) top no-repeat; padding-top:42px;" href="/">
+<!--	  &nbsp;<img src="/Content/images/home.png" height="32"  />&nbsp;-->
+	网站主页
+	&nbsp;Home&nbsp;
+</a>
+<a id="group1" style="  background:url(/Content/images/dh.png) top no-repeat; padding-top:42px;" href="@Url.Action("index", "map")">
+	<!--<img src="/Content/images/dh.png"   />-->
+	&nbsp;&nbsp;网站地图&nbsp;&nbsp;
+	WebSite Map
+ </a>
+<a id="group2" style="  background:url(/Content/images/tel.png) top no-repeat; padding-top:42px;" href="@Url.Action("about", "home", new { id = 24, cid = 47 })">
+<!--	<img src="/Content/images/tel.png"  />-->
+	联系我们
+	Content Us
+</a>			</nav>
+
+</span>
+		</div>
+    </div>
+    </header>
+    <img src="/Content/themes/theme_tech/img/background.jpg" alt='background-image' id='bgImage' />
+
+    <footer><span style="color:#FFFFFF;position:fixed; bottom:10px; width:600px;text-align:center; font-family: 微软雅黑;margin:0 auto; left:50%; margin-left:-300px; "> 版权所有：广州市新锘威智能科技有限公司  粤ICP备14010396号  技术支持：万博网络 </span> </footer>
+
+    <div id="wrapper">
+        <div id="centerWrapper">
+            <div id="tileContainer">
+                <img id='arrowLeft' class="navArrows" src='/Content/themes/theme_default/img/primary/arrowLeft.png' width="40" height="101" onclick="javascript:$group.goLeft();" style="margin-left: 40px;" alt="left " />
+                <img id='arrowRight' class="navArrows" src='/Content/themes/theme_default/img/primary/arrowRight.png' width="40" height="101" onclick="javascript:$group.goRight();" style="margin-right: 40px;" alt="right " />
+                <a href="#&amp;home" id="groupTitle0" class="groupTitle" style="margin-left: 0px; margin-top: 0px" onclick="javascript:$group.goTo(0);">
+                    <!-- <h3>Home</h3>-->
+                </a>
+                <a href="#&amp;download" id="groupTitle1" class="groupTitle" style="margin-left: 775px; margin-top: 0px" onclick="javascript:$group.goTo(1);">
+                    <h3>
+                        <!--Download-->
+                        <!--Navigation-->
+                    </h3>
+                </a>
+                <a href="#&amp;support" id="groupTitle2" class="groupTitle" style="margin-left: 1550px; margin-top: 0px" onclick="javascript:$group.goTo(2);">
+                    <h3>
+                        <!--Support-->
+                        <!-- Content Us-->
+                    </h3>
+                </a>
+
+                <a href="@Url.Action("about", "home", new { id = 10, cid = 41 })" class="tile tileCenteredSlide left group0" style="margin-top: 45px; margin-left: 0px; width: 300px; height: 145px; background: rgb(80, 150, 1);background:#006db7;font-family: 微软雅黑;" data-pos='45-0-300'>
+                    <div class="container1" style="width: 302px; height: 147px; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                        关于我们
+					  <h3 class='margin-t-0'>关于我们</h3>
+                        关于我们1
+                    </div>
+
+
+                </a>
+                <a href='@Url.Action("list", "news",new{id=58})' id="tileSlideshow0-2-0" class="tile tileSlideshow group0 " style="margin-top: 45px; margin-left: 310px; width: 300px; height: 145px; background: #f39900;"
+                    data-pos='45-310-300' data-n="0">
+
+                    <div class='imgWrapperBack' style="width: 302px; height: 147px; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                        新闻中心
+                    </div>
+                    <div class='imgWrapper' style="width: 302px; height: 147px; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                        新闻中心
+                    </div>
+
+
+                </a>
+
+                <a href='/anli/' class="tile tileFlipText vertical group1 " style="margin-top: 200px; margin-left: 1095px; width: 300px; height: 145px;"
+                    data-pos='200-310-300'>
+
+
+                    <div class='flipContainer'>
+                        <div class='flipFront' style="background: #c7123c; display: inherit; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; height: 145px; font-family: 微软雅黑;">
+                            经典案例    
+                        </div>
+                        <div class='flipBack' style="background: #c7123c; height: 145px; width: 300px; padding: 0px;">
+                            <h5 style="height: 145px; width: 300px; padding: 0px; margin: 0px; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; font-family: 微软雅黑;">经典案例
+                            
+                            </h5>
+                        </div>
+
+                    </div>
+                </a>
+
+
+                <a href='@Url.Action("about", "home", new { id = 37, cid = 44 })' class="tile tileSlideFx group0 " style="margin-top: 200px; margin-left: 0px; width: 302px; height: 145px; background: #c7123c;" data-pos='200-0-302'>
+
+                    <div class='slideText'>
+                        <!--专利成果-->
+                    </div>
+                    <div class='imgWrapper'>
+                        <img src='/Content/images/zlcg.jpg' alt="" title="" />
+                    </div>
+                    <!-- style="width: 302px; height: 147px;font-weight: 300;font-size: 36px;line-height:145px;text-align:center;padding: 0px;"-->
+
+                </a>
+                <a href='@Url.Action("index","product")' class="tile tileCentered group1 " style="margin-top: 45px; margin-left: 785px; width: 300px; height: 145px; background: #006db7;"
+                    data-pos='45-775-300'>
+                    <div class="container" style="width: 302px; height: 147px; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; padding: 0px; font-family: 微软雅黑;">
+                        产品中心
+
+                    </div>
+
+
+                </a>
+                <a href="@Url.Action("about", "home", new { id = 29, cid = 49 })" class="tile tileSlide up group1 " style="margin-top: 200px; margin-left: 785px; width: 300px; height: 145px; background: #f39900; padding: 0;" data-pos='200-775-300' data-doslide="1">
+                    <div class='slideText' style='height: 145px; width: 100%; top: 145px;'>
+                        <div style='background-color: #f39900; width: 100%; height: 100%; position: relative; padding-top: 60px; font-weight: 300; font-size: 36px; line-height: 45px; text-align: center; font-family: 微软雅黑;'>
+                            服务与支持 
+                        </div>
+                    </div>
+                    <div class="imageWrapper">
+                        <div class="imageCenterer" style="width: 302px; height: 147px; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                            服务与支持  
+                        </div>
+
+                    </div>
+
+                </a>
+                <a href='@Url.Action("view", "solution", new { id =10 })' class="tile tileCentered group1 " style="margin-top: 45px; margin-left: 1095px; width: 300px; height: 145px; background: #8ec31f;" data-pos='45-1085-300'>
+                    <div class="container" style="background: #8ec31f; width: 302px; height: 147px; font-weight: 300; font-size: 36px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                        <!--onmouseover="javascript:$(this).css('background','#8ec31f')" onmouseout="javascript:$(this).css('background','#006db7')"-->
+                        解决方案
+                    </div>
+                </a>
+
+
+                <a href="@Url.Action("about", "home", new { id = 20, cid = 45 })"  id="tileScroll1_2-1" class="tile tileScroll group0" style="margin-top: 200px; margin-left: 310px; width: 145px; height: 145px; background: #006db7;" data-pos='200-1085-145'>
+                    <div style='font-weight: 300; font-size: 26px; line-height: 145px; text-align: center; width: 145px; height: 145px; padding: 0px; font-family: 微软雅黑;'><span>研发中心</span></div>
+
+                </a>
+
+                <a  href='@Url.Action("about", "home", new { id = 21, cid = 46 })' class="tile tileImg group1 bottom endGroup" style="margin-top: 200px; margin-left: 465px; width: 145px; height: 145px; background: #8ec31f;" data-pos='200-1240-145'>
+                    <div style='max-height: 145px; font-weight: 300; font-size: 26px; line-height: 145px; text-align: center; width: 145px; padding: 0px; width: 145px; font-family: 微软雅黑;'>绿能趋势</div>
+
+
+                </a>
+
+
+
+
+
+                <a href='@Url.Action("about", "home", new { id = 24, cid = 47 })' class="tile group2 align-center" style="margin-top: 45px; margin-left: 1560px; width: 455px; height: 145px; background: #006db7;"
+                    data-pos='45-1550-455'>
+                    <div style='line-height: 30px; margin-top: 40px; padding: 5px; text-aling: center; line-height: 45px; font-size: 36px;'>
+                        <span style='letter-spacing: 0px; font-weight: 300; text-align: center; font-family: 微软雅黑;'>联系我们</span>
+                        <!-- <div style='font-size: 20px; letter-spacing: 2px; font-weight: bold;'>18888888888</div>-->
+                    </div>
+
+                </a>
+                <a href='@Url.Action("about", "home", new { id = 23, cid = 48 })' class="tile tileFlip horizontal group2 " style="margin-top: 200px; margin-left: 1560px; width: 145px; height: 145px;" data-pos='200-1560-145'>
+
+                    <div class='flipContainer'>
+                        <div class='flipFront' style="background: #8ec31f; font-weight: 300; font-size: 26px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                            加入我们
+                            <div class='flipImgCenterer'>
+                                <img src="/Content/img/forum.png" alt="" title="" style="width: 103.5px;" />
+                            </div>
+                        </div>
+                        <div class='flipBack' style="background: #c82345; font-weight: 300; font-size: 26px; line-height: 145px; text-align: center; width: 145px; height: 145px; padding: 0px;">
+                            Join us
+                        
+                        </div>
+
+                    </div>
+                </a>
+                <a href='http://mail.sinawell.com' class="tile tileFlip horizontal group2 " style="margin-top: 200px; margin-left: 1715px; width: 145px; height: 145px; background: #f39900;"
+                    data-pos='200-1715-145'>
+
+                    <div class='flipContainer' style="background: #f39900; font-weight: 300; font-size: 26px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                        企业邮箱
+                 
+
+                    </div>
+                </a>
+                <a href="@Url.Action("links","home")" class="tile  tileMosaic group2 " style="margin-top: 200px; margin-left: 1870px; width: 146px; height: 145px; background: #c7123c;"
+                    data-pos='200-1870-146'>
+                    <!--noClick -->
+
+                    <div id='f_container' class='f_container9' style="font-weight: 300; font-size: 26px; line-height: 145px; text-align: center; font-family: 微软雅黑;">
+                        友情链接
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="catchScroll"></div>
+
+</body>
+</html>

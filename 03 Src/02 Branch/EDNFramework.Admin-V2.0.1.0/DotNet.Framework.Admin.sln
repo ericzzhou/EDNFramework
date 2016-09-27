@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.Business", "EDNFramework.Admin.Business\DotNet.Framework.Admin.Business.csproj", "{4815033D-28DD-403A-A187-8879A0450C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.Core", "EDNFramework.Admin.Core\DotNet.Framework.Admin.Core.csproj", "{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DotNet.Framework.Admin.Database", "EDNFramework.Admin.Database\DotNet.Framework.Admin.Database.sqlproj", "{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.Entity", "EDNFramework.Admin.Entity\DotNet.Framework.Admin.Entity.csproj", "{44DEB649-B841-43BE-AD0C-8C90A898DF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.T4Code", "EDNFramework.Admin.T4Code\DotNet.Framework.Admin.T4Code.csproj", "{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.UI", "EDNFramework.Admin.UI\DotNet.Framework.Admin.UI.csproj", "{C697B018-36C3-41EA-B950-0D182659A551}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Auth", "EDNFramework.Auth\DotNet.Framework.Auth.csproj", "{818880A3-7C06-4455-AEB4-04322FB19FFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.WebTools", "EDNFramework.WebTools\DotNet.Framework.WebTools.csproj", "{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs37
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EDNFramework.Admin.Business\\DotNet.Framework.Admin.Business.csproj
+		SccProjectName1 = EDNFramework.Admin.Business
+		SccLocalPath1 = EDNFramework.Admin.Business
+		SccProjectUniqueName2 = EDNFramework.Admin.Core\\DotNet.Framework.Admin.Core.csproj
+		SccProjectName2 = EDNFramework.Admin.Core
+		SccLocalPath2 = EDNFramework.Admin.Core
+		SccProjectUniqueName3 = EDNFramework.Admin.Database\\DotNet.Framework.Admin.Database.sqlproj
+		SccProjectName3 = EDNFramework.Admin.Database
+		SccLocalPath3 = EDNFramework.Admin.Database
+		SccProjectUniqueName4 = EDNFramework.Admin.Entity\\DotNet.Framework.Admin.Entity.csproj
+		SccProjectName4 = EDNFramework.Admin.Entity
+		SccLocalPath4 = EDNFramework.Admin.Entity
+		SccProjectUniqueName5 = EDNFramework.Admin.T4Code\\DotNet.Framework.Admin.T4Code.csproj
+		SccProjectName5 = EDNFramework.Admin.T4Code
+		SccLocalPath5 = EDNFramework.Admin.T4Code
+		SccProjectUniqueName6 = EDNFramework.Admin.UI\\DotNet.Framework.Admin.UI.csproj
+		SccProjectName6 = EDNFramework.Admin.UI
+		SccLocalPath6 = EDNFramework.Admin.UI
+		SccProjectUniqueName7 = EDNFramework.Auth\\DotNet.Framework.Auth.csproj
+		SccProjectName7 = EDNFramework.Auth
+		SccLocalPath7 = EDNFramework.Auth
+		SccProjectUniqueName8 = EDNFramework.WebTools\\DotNet.Framework.WebTools.csproj
+		SccProjectName8 = EDNFramework.WebTools
+		SccLocalPath8 = EDNFramework.WebTools
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{818880A3-7C06-4455-AEB4-04322FB19FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818880A3-7C06-4455-AEB4-04322FB19FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818880A3-7C06-4455-AEB4-04322FB19FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818880A3-7C06-4455-AEB4-04322FB19FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

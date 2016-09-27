@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ImageWatermarkingConfig>
+  <NormalImage>~/Images/normal.png</NormalImage>
+  <Watermarking>Eric.Z.Zhou</Watermarking>
+  <Property>
+    <Location></Location>
+    <Type>Font</Type>
+    <FamilyName>宋体</FamilyName>
+    <Size>17</Size>
+    <FilePathGroup>themes</FilePathGroup>
+  </Property>
+</ImageWatermarkingConfig>

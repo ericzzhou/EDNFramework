@@ -1,0 +1,154 @@
+﻿@{string resourcePath = "/Content";}
+@using DotNet.Framework.MVC.Extend;
+@using DotNet.Framework.MVC.Extend.Extends;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<metahttp-equiv="X-UA-Compatible"content="IE=8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - 广州市新锘威智能科技有限公司</title>
+    <link href="@resourcePath/css/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@resourcePath/js/jquery1102.js"></script>
+    <script type="text/javascript" src="@resourcePath/js/FlashPic.js"></script>
+ <script type="text/javascript" src="@resourcePath/js/js.js"></script>
+ 
+    <style type="text/css">
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #0f6d39;
+            background-image: url(@(resourcePath)/images/nei_05.jpg);
+            background-repeat: repeat-x;
+        }
+
+        body, td, th {
+            font-family: "微软雅黑";
+            color: #FFF;
+            font-size: 12px;
+        }
+  
+    .plist_img {
+        width: 160px;
+    }
+
+        .plist_img img {
+            width: 150px;
+            height: 150px;
+        }
+
+    .plist_font {
+        text-align: left;
+        vertical-align: top;
+    }
+.plist_font a {
+       text-decoration:none;
+         color:#fff;
+    }
+     .plist_font a:hover {
+       text-decoration:underline;
+         color:#fff;
+    }
+    .pager ul {
+        list-style: none;
+    }
+
+    .pager li {
+        float: left;
+        margin-left: 10px;
+    }
+
+        .pager li a {
+            color: #fff;
+        }
+
+    .pager .active {
+        color: #55a002;
+    }
+
+    .pager li a:link {
+        text-decoration: none;
+        color: blue;
+    }
+
+    .pager li a:hover {
+        border: 1px solid #2473ba;
+        color: #fff;
+    }
+
+        img{border:none}
+.hidden{display:none}
+.btn-unfold{ BaCKGROUND:url(@(resourcePath)/images/bg10.png) no-repeat;WIDTH:13px;MaRGIN-RIGHT:5px;HEIGHT:13px}
+.btn-fold{ BaCKGROUND:url(@(resourcePath)/images/bg09.png) no-repeat;WIDTH:13px;MaRGIN-RIGHT:5px;HEIGHT:13px}
+
+        .hide{display:none}
+    </style>
+</head>
+
+<body>
+
+    <table width="990" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="101">
+                @Html.Partial("_NavPartial")
+            </td>
+        </tr>
+        <tr>
+            <td height="201" align="center" valign="bottom" id="tPic" >
+                @Html.Partial("_SlidePartial")
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#20593a">
+                <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="227"  align="center" valign="top" class="left">
+                            @RenderSection("bodyleft", true)
+                        </td>
+                        <td align="center" valign="top"  >
+                            @RenderBody()
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="50" bgcolor="#1d642f" align="center">@Html.Partial("_CopryRightPartial")</td>
+        </tr>
+    </table>
+    <script>
+        $(function () {
+            $(".left_zi").click(function () {
+                var td = $(this);
+                var href = $(td).find("a").attr("href");
+                location.href = href;
+            });
+        });
+    </script>
+     @Html.Raw(Html.EDNFHelper_FloatAD_Left())
+    @Html.Raw(Html.EDNFHelper_FloatAD_Right())
+	
+ 
+
+     <script type="text/javascript" src="/Content/js/JumpAD.js"></script>
+
+
+<table witdh=990  ><tr><td>
+@Html.Raw(Html.EDNFHelper_SingleJumpAD_Show("gg1"))
+
+<script type="text/javascript">
+
+    var ad1 = new AdMove("gg1");
+    ad1.Run();
+    function hidead()
+    { document.getElementById("gg1").style.display = "none"; }
+</script>
+</td></tr></table>
+</body>
+</html>

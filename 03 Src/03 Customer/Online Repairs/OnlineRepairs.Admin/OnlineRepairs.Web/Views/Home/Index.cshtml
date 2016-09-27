@@ -1,0 +1,62 @@
+﻿@using DotNet.Framework.Admin.Entity.EDNFramework_Repairs;
+@{
+    ViewBag.Title = "用户下单";
+}
+@model IList<Entity_Brand>
+@using (Ajax.BeginForm("Index", "Home", null, new AjaxOptions() { HttpMethod = "POST", OnSuccess = "OnSuccess", OnFailure = "OnFailure" }, new { id = "loginForm" }))
+{
+    <div class="form-group has-feedback">
+        <select class="form-control" name="ComputyBrand">
+            <option value="0">请选择电脑品牌</option>
+           @foreach (var brand in Model)
+           {
+               <option value="@brand.ID">@brand.Name</option>
+           }
+        </select>
+    </div>
+    <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="ComputyModel" placeholder="电脑型号">
+    </div>
+    <div class="form-group has-feedback">
+        <textarea class="form-control" rows="3" name="RepairsDescription" placeholder="故障描述"></textarea>
+    </div>
+    
+    
+    <div class="form-group has-feedback">
+        <label class="radio-inline">
+            <input type="radio" name="ComputerType" value="0" checked="checked">
+            台式机
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="ComputerType" value="1">
+            笔记本
+        </label>
+    </div>
+    <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="ContactsName" placeholder="联系人">
+    </div>
+    <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="ContactsMobile" placeholder="联系电话">
+    </div>
+    <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="ContactsAddress" placeholder="维修地址">
+    </div>
+    <div class="form-group has-feedback">
+        <input class="btn btn-lg btn-success btn-block" type="submit" value="提交订单" />
+    </div>
+}
+@section scripts{
+    <script type="text/javascript">
+        function OnSuccess(data) {
+            if (data) {
+                if (data.status == 1) {
+                    alert("下单成功");
+                    location.href = '/home/success/' + data.message;
+                }
+                else {
+                    alert(data.message);
+                }
+            }
+        }
+    </script>
+}

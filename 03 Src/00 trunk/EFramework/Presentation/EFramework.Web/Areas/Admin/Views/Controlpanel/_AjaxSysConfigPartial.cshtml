@@ -1,0 +1,76 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@using EFramework.Entities.Domain.ControlPanel;
+@model PagedList<SYS_ConfigContentEntity>
+<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>项目</th>
+            <th>值</th>
+            <th class="hidden-480">描述</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Keyname</td>
+                <td>@item.Value</td>
+                <td class="hidden-480">@item.Description</td>
+                <td class="operation">
+                    <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                        <a href="@Url.Action("EditConfig", new { id = item.ID })" class="green btn_edit" data-param="@item.ID">
+                            <i class="icon-pencil bigger-130"></i>
+                        </a>
+
+                        <a href="javascript:;" class="red btn_del" data-param="@item.ID">
+                            <i class="icon-trash bigger-130"></i>
+                        </a>
+                    </div>
+
+                    <div class="visible-xs visible-sm hidden-md hidden-lg">
+                        <div class="inline position-relative">
+                            <button data-toggle="dropdown" class="btn btn-minier btn-yellow dropdown-toggle">
+                                <i class="icon-caret-down icon-only bigger-120"></i>
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                <li>
+                                    <a title="" data-rel="tooltip" class="tooltip-success btn_edit" href="@Url.Action("EditConfig", new { id = item.ID })" data-original-title="编辑" data-param="@item.ID">
+                                        <span class="green">
+                                            <i class="icon-edit bigger-120"></i>
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a title="" data-rel="tooltip" class="tooltip-error btn_del" href="javascript:;" data-original-title="删除" data-param="@item.ID">
+                                        <span class="red">
+                                            <i class="icon-trash bigger-120"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr> 
+        }
+    </tbody>
+</table>
+
+<div>
+    <div style="float: left; width: 50%">共 @Model.TotalPageCount 页 @Model.TotalItemCount 条记录，当前为第 @Model.CurrentPageIndex 页</div>
+    <div class="dataTables_paginate paging_bootstrap">
+        @Ajax.Pager(Model, new PagerOptions
+{
+    PageIndexParameterName = "pageIndex",
+    CurrentPagerItemWrapperFormatString = "<li class=\"active\"><a href=\"javascript:;\">{0}</a></li>",
+    PagerItemWrapperFormatString = "<li>{0}</li>",
+    ContainerTagName = "ul",
+    CssClass = "pagination",
+    PrevPageText = "«",
+    NextPageText = "»"
+}, new MvcAjaxOptions { UpdateTargetId = "configs", DataFormId = "searchForm" }, new { style = "float:right" })
+    </div>
+</div>

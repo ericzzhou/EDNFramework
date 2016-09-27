@@ -1,0 +1,53 @@
+@using DotNet.Framework.MVC.Extend.Extends;
+@{
+       var entity = ViewBag.Entity as SignalWell.Web.UI.Models.Entity_Content;
+    int CategoryID = ViewBag.CategoryID;
+    string firstCss = "#55a002";
+    string secondCss = "#55a002";
+    if (CategoryID == 58)
+    {
+        firstCss = "#2473ba";
+    }
+    if (CategoryID == 59)
+    {
+        secondCss = "#2473ba";
+    }
+ViewBag.Title = entity.Title??"新闻明细";
+}
+@section bodyleft{
+   <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h">
+                <div class="nov m_l l">
+                     
+                    <ul>
+            <li> <a href="@Url.Action("list", "news", new { id = 58 })"  class="a hover"> <span class="db tingico liico0"></span> <b>公司新闻</b></a></li> 
+			 <li> <a href="@Url.Action("list", "news", new { id = 59 })"  class="a hover"> <span class="db tingico liico0"></span> <b>业内新闻</b></a></li> 
+			 
+      </ul>
+    </div>
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+}
+<style type="text/css">
+    .right_zi a {
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" class="right_top"><span style="float:right; font-size:14px"> 当前位置：<a href="/" style=" color:#FFFFFF; text-decoration:none">首页</a> >> 新闻中心 >> @Html.Raw(Html.EDNFHelper_ArticleCategory(entity.ClassID).ClassName)</span> @entity.Title</td>
+    </tr>
+    <tr>
+        <td class="right_zi"  height="450" valign="top" >
+
+            <div align="left">
+               @Html.Raw(entity.Description)
+            </div>
+            <p></p>
+        </td>
+    </tr>
+</table>

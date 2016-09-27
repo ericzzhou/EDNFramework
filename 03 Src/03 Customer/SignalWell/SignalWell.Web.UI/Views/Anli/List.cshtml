@@ -1,0 +1,96 @@
+﻿@using Webdiyer.WebControls.Mvc
+@using DotNet.Framework.Core.Extends;
+@using DotNet.Framework.MVC.Extend.Extends;
+@{
+    var categories = ViewBag.entityCategories as List<SignalWell.Web.UI.Models.EDNF_Product_Class>;
+
+    int TotalCount = Convert.ToInt32(ViewBag.TotalCount);
+    int PageIndex = Convert.ToInt32(ViewBag.PageIndex);
+    int PageSize = Convert.ToInt32(ViewBag.PageSize);
+    var products = ViewBag.Products as IList<SignalWell.Web.UI.Models.Entity_Product_Item_Pager>;
+    ViewBag.Title = ViewBag.CategoryName;
+}
+@section bodyleft{
+    <table width="100%" border="0" cellspacing="14" cellpadding="0">
+        <div class="handle_a">
+            <div class="head_bg">
+                <div class="cl top_h" style="height: auto">
+                    <div class="nov m_l l">
+                        <ul>
+                            @foreach (var cat in categories)
+                            {
+                                <li><a href="@Url.Action("list", new { id = cat.ClassID })" class="a hover"><span class="db tingico liico0"></span>@cat.ClassName</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="park"></div>
+                </div>
+            </div>
+        </div>
+    </table>
+}
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" colspan="2" class="right_top">@ViewBag.CategoryName</td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr>
+        <td height="450" valign="top">
+            @foreach (var item in products)
+            {
+                <table border="0" width="180" style="float: left" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td class="plist_img" align="center">
+                            <a href="@Url.Action("Detail", new { id = item.ID })">
+                                <img src="@item.ImageUrl" />
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="plist_font" height="30" align="center" width="180">
+                            <h3 style="margin-top: 0; text-align: center; line-height: 30px;">
+                                <a href="@Url.Action("Detail", new { id = item.ID })">
+                                    @item.PName
+                                </a>
+                            </h3>
+                            @item.Summary.ClipString(500, "...")
+                        </td>
+                    </tr>
+                </table>
+
+            }
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="pager">
+            @Html.Pager(TotalCount, PageSize, PageIndex, "product", "home", new PagerOptions
+       {
+           PageIndexParameterName = "page",
+           ContainerTagName = "ul",
+           CurrentPagerItemWrapperFormatString = "<li class=\"active\">{0}</li>",
+           NumericPagerItemWrapperFormatString = "<li>{0}</li>",
+           NavigationPagerItemWrapperFormatString = "<li>{0}</li>",
+           AlwaysShowFirstLastPageNumber = true,
+           AutoHide = false,
+           //CssClass = "pager"
+
+       }, null, null, null)
+            @* @(Html.Pager(Convert.ToInt32(ViewBag.TotalCount)
+                 , Convert.ToInt32(ViewBag.PageSize), Convert.ToInt32(ViewBag.PageIndex)
+                 , "product", "home", new Webdiyer.WebControls.Mvc.PagerOptions
+                {
+                    ContainerTagName = "span",
+                    PageIndexParameterName = "id",
+                    NumericPagerItemWrapperFormatString = "<span class=\"jn_fy_num\">{0}</span>",
+                    AlwaysShowFirstLastPageNumber = true,
+                    HorizontalAlign = "right"
+                }, null, null, new { Style = "float:right" }))*@
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,291 @@
+﻿<!--小屏 menu begin-->
+<a class="menu-toggler" id="menu-toggler" href="#">
+    <span class="menu-text"></span>
+</a>
+<!--小屏 menu end-->
+<div class="sidebar" id="sidebar">
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+    </script>
+    @*<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <button class="btn btn-success">
+                <i class="icon-signal"></i>
+            </button>
+
+            <button class="btn btn-info">
+                <i class="icon-pencil"></i>
+            </button>
+
+            <button class="btn btn-warning">
+                <i class="icon-group"></i>
+            </button>
+
+            <button class="btn btn-danger">
+                <i class="icon-cogs"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <span class="btn btn-success"></span>
+
+            <span class="btn btn-info"></span>
+
+            <span class="btn btn-warning"></span>
+
+            <span class="btn btn-danger"></span>
+        </div>
+    </div>*@
+    <!-- #sidebar-shortcuts -->
+    <!--左侧菜单 begin-->
+    <ul class="nav nav-list">
+        <li class="active">
+            <a href="index.html">
+                <i class="icon-dashboard"></i>
+                <span class="menu-text">首页 </span>
+            </a>
+        </li>
+
+        @*<li>
+            <a href="typography.html">
+                <i class="icon-text-width"></i>
+                <span class="menu-text">Typography </span>
+            </a>
+        </li>*@
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-edit"></i>
+                <span class="menu-text">内容管理系统 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="@Url.Action("article","cms")">
+                        <i class="icon-double-angle-right"></i>
+                       文章信息
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("category","cms")">
+                        <i class="icon-double-angle-right"></i>
+                       文章分类
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("tag","cms")">
+                        <i class="icon-double-angle-right"></i>
+                        标签管理
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("recycle","cms")">
+                        <i class="icon-double-angle-right"></i>
+                        文章回收站
+                    </a>
+                </li>
+            </ul>
+        </li>
+       
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-picture"></i>
+                <span class="menu-text">图片管理系统 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="@Url.Action("setting","picture")">
+                        <i class="icon-double-angle-right"></i>
+                       图片系统配置
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("category","picture")">
+                        <i class="icon-double-angle-right"></i>
+                       图片分类管理
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("index","picture")">
+                        <i class="icon-double-angle-right"></i>
+                       图片在线管理
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("tag","picture")">
+                        <i class="icon-double-angle-right"></i>
+                        图片标签管理
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Recycle","picture")">
+                        <i class="icon-double-angle-right"></i>
+                        图片回收站
+                    </a>
+                </li>
+            </ul>
+        </li>
+        
+
+        
+
+        
+
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-list"></i>
+                <span class="menu-text">商品管理系统 </span>
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="@Url.Action("index","shop")">
+                        <i class="icon-double-angle-right"></i>
+                       商品信息管理
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("category","shop")">
+                        <i class="icon-double-angle-right"></i>
+                        商品分类管理
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("recycle","shop")">
+                        <i class="icon-double-angle-right"></i>
+                        商品回收站
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-file-alt"></i>
+                <span class="menu-text">客户管理系统 </span>
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="@Url.Action("gustbook","customer")">
+                        <i class="icon-double-angle-right"></i>
+                       客户留言管理
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("comment","customer")">
+                        <i class="icon-double-angle-right"></i>
+                        客户评论管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="@Url.Action("index","calendar")">
+                <i class="icon-calendar"></i>
+
+                <span class="menu-text">日历
+									<span class="badge badge-transparent tooltip-error" title="2&nbsp;Important&nbsp;Events">
+                                        <i class="icon-warning-sign red bigger-130"></i>
+                                    </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-desktop"></i>
+                <span class="menu-text">控制面板 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="@Url.Action("sysconfig","controlpanel")">
+                        <i class="icon-double-angle-right"></i>
+                        系统配置
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-double-angle-right"></i>
+                        系统安全<b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="@Url.Action("permission","controlpanel")">
+                                <i class="icon-leaf"></i>
+                                权限管理
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("roles","controlpanel")" class="dropdown-toggle">
+                                <i class="icon-pencil"></i>
+                                角色管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("users","controlpanel")">
+                                <i class="icon-eye-open"></i>
+                                用户管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-double-angle-right"></i>
+                        日志查询<b class="arrow icon-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="@Url.Action("syslogs","controlpanel")">
+                                <i class="icon-leaf"></i>
+                                系统日志
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("operationlogs","controlpanel")" class="dropdown-toggle">
+                                <i class="icon-pencil"></i>
+                                操作日志
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("userlogs","controlpanel")">
+                                <i class="icon-eye-open"></i>
+                                用户日志
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        
+    </ul>
+    <!--左侧菜单 end-->
+
+    <div class="sidebar-collapse" id="sidebar-collapse">
+        <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+    </div>
+
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+    </script>
+</div>

@@ -1,0 +1,3 @@
+﻿.success { width: 80%; height: 40px; line-height: 40px; border: 2px solid yello; background-color: green; }
+.warning { width: 80%; height: 40px; line-height: 40px; border: 2px solid groove; background-color: yellow; }
+.fail { width: 80%; height: 40px; line-height: 40px; border: 2px solid dashed; background-color: red; }

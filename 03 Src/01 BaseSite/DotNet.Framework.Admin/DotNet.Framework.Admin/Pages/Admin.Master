@@ -1,0 +1,195 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="DotNet.Framework.Admin.Pages.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta charset="utf-8" />
+    <title><%=Resources.AppBaseResource.sys_adminTitle %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <%--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" />--%>
+
+    <%=Css %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" />--%>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <%-- <a class="brand" href="<%:ResourcePath%>/Index.aspx">质量监控系统</a>--%>
+                <a class="brand">
+                    <img src="<%:DotNet.Framework.Admin.Core.Config.ConfigHelper.ResourcePath%>/Resource/Images/logo2.png" style="height: 50px;" /></a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                        <%--<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-cog"></i>
+                                设置
+							<b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">我的信息</a></li>
+                                <li><a href="javascript:;">密码修改</a></li>
+                                <li class="divider"></li>
+                                <li><a href="javascript:;">帮助</a></li>
+                            </ul>
+                        </li>--%>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-user"></i>
+                                <%=DotNet.Framework.Admin.Core.Entity.BusEntity_LoginUser.Sys_LoginUser.TrueName %>[<%=DotNet.Framework.Admin.Core.Entity.BusEntity_LoginUser.Sys_LoginUser.UserName %>]
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%:ResourcePath%>/Pages/Account/User/ModifyInfo.aspx">编辑资料</a></li>
+                                <li><a href="<%:ResourcePath%>/Pages/Account/User/ModifyPass.aspx">修改密码</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<%:ResourcePath%>/LogOut.aspx">退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <%--  <input type="text" class="search-query" placeholder="Search" />--%>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /navbar-inner -->
+    </div>
+    <!-- /navbar -->
+    <form id="frm" runat="server">
+        <EDNFramework:SubNavbar runat="server" ID="SubNavbar" />
+
+        <div class="main">
+            <div class="container">
+                <%--<div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="#">首页</a> <span class="divider">/</span></li>
+                    <li><a href="#">Library</a> <span class="divider">/</span></li>
+                    <li class="active">Data</li>
+                </ul>
+            </div>--%>
+                <%--<div class="main-inner">--%>
+                <asp:ContentPlaceHolder ID="cph" runat="server">
+                </asp:ContentPlaceHolder>
+                <%-- </div>--%>
+            </div>
+        </div>
+    </form>
+    <%--<div class="extra">
+        <div class="extra-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="javascript:;">About Us</a></li>
+                            <li><a href="javascript:;">Twitter</a></li>
+                            <li><a href="javascript:;">Facebook</a></li>
+                            <li><a href="javascript:;">Google+</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="javascript:;">Frequently Asked Questions</a></li>
+                            <li><a href="javascript:;">Ask a Question</a></li>
+                            <li><a href="javascript:;">Video Tutorial</a></li>
+                            <li><a href="javascript:;">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+
+                        <h4>Legal</h4>
+
+                        <ul>
+                            <li><a href="javascript:;">License</a></li>
+                            <li><a href="javascript:;">Terms of Use</a></li>
+                            <li><a href="javascript:;">Privacy Policy</a></li>
+                            <li><a href="javascript:;">Security</a></li>
+                        </ul>
+
+                    </div>
+                    <!-- /span3 -->
+
+                    <div class="span3">
+
+                        <h4>Settings</h4>
+
+                        <ul>
+                            <li><a href="javascript:;">Consectetur adipisicing</a></li>
+                            <li><a href="javascript:;">Eiusmod tempor </a></li>
+                            <li><a href="javascript:;">Fugiat nulla pariatur</a></li>
+                            <li><a href="javascript:;">Officia deserunt</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /extra-inner -->
+    </div>--%>
+    <!-- /extra -->
+    <div class="footer" id="footer" style="z-index: 1000;">
+        <div class="footer-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span5">
+                        技术支持：zhouzhaokun@gmail.com &nbsp;
+                    </div>
+                    <div class="span4">
+                        CopyRight &copy; 2013 - <%:DateTime.Now.Year %> Admin.
+                    </div>
+                    <div class="span3" style="text-align: right;">
+                        当前登录用户：<%=DotNet.Framework.Admin.Core.Entity.BusEntity_LoginUser.Sys_LoginUser.TrueName %>[<%=DotNet.Framework.Admin.Core.Entity.BusEntity_LoginUser.Sys_LoginUser.UserName %>]
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /footer-inner -->
+    </div>
+    <!-- /footer -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <EDNFramework:AlertModal runat="server" />
+    <script src="<%:ResourcePath %>/Resource/Scripts/jquery-1.7.2.min.js"></script> 
+    <script src="<%:ResourcePath %>/Resource/Scripts/json2.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/bootstrap.js"></script>  
+    <script src="<%:ResourcePath %>/Resource/Libs/jquery-ui/js/jquery-ui.min.js"></script>
+    <%--<script src="<%:ResourcePath %>/Resource/Scripts/jquery.pin.min.js"></script>--%>
+    
+    <%--<script src="<%:ResourcePath %>/Resource/Scripts/base.js"></script>--%>
+    <%--<script src="<%:ResourcePath %>/Resource/Libs/DataTables-1.9.4/js/jquery.dataTables.min.js"></script>--%>
+    <%--<script src="<%:ResourcePath %>/Resource/Libs/showLoading/js/jquery.showLoading.js"></script>--%>
+    <%--<script src="<%:ResourcePath %>/Resource/Scripts/jquery.validate.js"></script>--%>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/pqgrid/pqgrid.min.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.message.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.modal.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.confirm.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/Extend/jquery.extend.js"></script>
+    <%--<script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/iCheck/jquery.icheck.min.js"></script>--%>
+    <asp:ContentPlaceHolder ID="floor" runat="server">
+    </asp:ContentPlaceHolder>
+    <%=Script %>
+    <script>
+        //$(".subnavbar").pin({ containerSelector: "body", minWidth: 940 });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@using DotNet.Framework.MVC.Extend.Extends;
+@{
+ 
+    var categories = ViewBag.entityCategories as List<SignalWell.Web.UI.Models.EDNF_Product_Class>;
+    var entity = ViewBag.entity as SignalWell.Web.UI.Models.Entity_Product_Item;
+    ViewBag.Title = entity.PName;
+}
+
+@section bodyleft{
+    <table width="100%" border="0" cellspacing="14" cellpadding="0">
+        <div class="handle_a">
+            <div class="head_bg">
+                <div class="cl top_h" style="height: auto">
+                    <div class="nov m_l l">
+                        <ul>
+                            @foreach (var cat in categories)
+                            {
+                                <li><a href="@Url.Action("index", new { id = cat.ClassID })" class="a hover"><span class="db tingico liico0"></span>@cat.ClassName</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="park"></div>
+                </div>
+            </div>
+        </div>
+    </table>
+}
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" class="right_top"><span style="float:right;font-size:14px"> 当前位置：<a href="/" style=" color:#FFFFFF; text-decoration:none">首页</a> >> 经典案例  >>@Html.EDNFHelper_ProductCategory(entity.ClassID).ClassName  </span> @Html.Raw(entity.PName)</td>
+    </tr>
+    <tr>
+        <td class="right_zi" height="450" valign="top">
+            <!-- <div style="text-align: center; width: 100%; margin: 0 auto;">
+                <img src="@entity.ImageUrl" style="width:500px; " />
+            </div>-->
+            <br />
+            <div align="left">
+                @Html.Raw(entity.Description)
+            </div>
+            <p></p>
+        </td>
+    </tr>
+</table>

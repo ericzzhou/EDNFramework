@@ -1,0 +1,20 @@
+﻿GO
+
+CREATE TABLE [EDNF_CMS_Comment](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ContentId] [int] NULL,
+	[Description] [text] NULL,
+	[CreatedDate] [datetime] NOT NULL DEFAULT(GETDATE()),
+	[CreatedUserID] [int] NOT NULL,
+	[ReplyCount] [int] NOT NULL DEFAULT(0),
+	[ParentID] [int] NOT NULL,
+	[TypeID] [smallint] NOT NULL,
+	[State] [bit] NOT NULL DEFAULT(0),
+	[IsRead] [bit] NOT NULL,
+ CONSTRAINT [PK_EDNF_CMS_Comment] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO

@@ -1,0 +1,114 @@
+﻿@using DotNet.Framework.Admin.Business.EDNFramework_SYS;
+@using DotNet.Framework.Admin.Core.Entity;
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@Business_ConfigContent.GetValueByKey("SYS_WebSiteName") - @ViewBag.Title</title>
+
+    @Styles.Render("~/css")
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/modernizr")
+    <script type="text/javascript">
+        function alert(msg) {
+            $(".alertModel").html(msg);
+            $('#alertModel').modal();
+            setTimeout(function () { $("#alertModel").modal("hide") }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @{
+                    string homeUrl = Url.Action("index", "home");
+                    if (HttpContext.Current.User.Identity.IsAuthenticated && BusEntity_LoginUser.Sys_LoginUser.UserRole.Contains(3))
+                    {
+                        homeUrl = Url.Action("index", "Manager");
+                    }
+                }
+                <a class="navbar-brand hidden-sm" href="@homeUrl">@Business_ConfigContent.GetValueByKey("SYS_WebSiteName")</a>
+
+            </div>
+            <nav class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        if (!BusEntity_LoginUser.Sys_LoginUser.UserRole.Contains(3))
+                        {
+                        <li><a href="@Url.Action("index", "home")">在线下单</a></li>
+                        <li><a href="@Url.Action("Search", "home")">订单查询</a></li>
+                        <li><a href="@Url.Action("myorder", "home")">历史订单</a></li>
+                        }
+                        else
+                        {
+                        <li><a href="@Url.Action("Index", "Manager")">分派给我的订单</a></li>
+                        }
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("Login", "Account")">登录</a></li>
+                        <li><a href="@Url.Action("Register", "Account")">注册</a></li>
+                    }
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        <div class="container-fluid">
+
+            <div class="bs-example bs-example-standalone">
+                <div role="alert" class="alert alert-info alert-dismissible fade in ">
+                    @{
+        var user = DotNet.Framework.Admin.Core.Entity.BusEntity_LoginUser.Sys_LoginUser;
+        if (user != null && user.UserID > 0 && user.UserRole.Contains(3))
+        {
+                        @user.UserName <text>，@Business_ConfigContent.GetValueByKey("SYS_WelecomeEmployee")</text>
+        }
+        else
+        {
+                        @Business_ConfigContent.GetValueByKey("SYS_WelecomeUser")
+        }
+                    }
+                </div>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+            </div>
+        </div>
+    }
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+    @Html.Partial("_AlertPartial")
+    <div class="container-fluid">
+        <div class="bs-example bs-example-standalone">
+            <div role="alert" class="alert  alert-dismissible ">
+                @Business_ConfigContent.GetValueByKey("SYS_WebCopyRight")
+            </div>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+        </div>
+    </div>
+    @Scripts.Render("~/jquery", "~/jqueryval")
+    <script type="text/javascript">
+        function OnFailure() {
+            alert("系统异常，请联系管理员");
+        }
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

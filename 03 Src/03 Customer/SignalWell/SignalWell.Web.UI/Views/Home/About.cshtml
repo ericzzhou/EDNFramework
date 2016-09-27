@@ -1,0 +1,45 @@
+@using DotNet.Framework.MVC.Extend.Extends;
+@{
+   
+    int? cid = ViewBag.CID;
+    int? id = ViewBag.ID;
+    IList<SignalWell.Web.UI.Models.Entity_About_LeftContent> articles = ViewBag.Categories as IList<SignalWell.Web.UI.Models.Entity_About_LeftContent>;
+    SignalWell.Web.UI.Models.Entity_Content article = ViewBag.Article as SignalWell.Web.UI.Models.Entity_Content;
+    ViewBag.Title = article.Title;
+}
+
+@section bodyleft{
+   
+	 <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h">
+                <div class="nov m_l l">
+                     
+                    <ul>
+                       @foreach (var item in articles)
+        {
+            string style = "#55a002";
+            if (item.ContentID == id)
+            {
+                style = "#2473ba";
+            }
+
+       <!--bgcolor="@style"-->        <li><a href="@Url.Action("about", "home", new { id = item.ContentID, cid = item.ClassID })" class="a hover"><span class="db tingico liico0"></span> @item.Title</a></li>
+            
+        }</ul>
+    </div>
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+}
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" class="right_top" align="left" ><span style="float:right; font-size:14px"> 当前位置：<a href="/" style=" color:#FFFFFF; text-decoration:none">首页</a> >><!-- <a href="/home/about/10?cid=41" style=" color:#FFFFFF; text-decoration:none">关于我们</a> >>--> @Html.Raw(Html.EDNFHelper_ArticleCategory(article.ClassID).ClassName) >>  @Html.Raw(article.Title)</span> @Html.Raw(article.Title)</td>
+    </tr>
+    <tr>
+        <td class="right_zi"  height="450" valign="top" align="left">@Html.Raw(article.Description)
+            <p></p>
+        </td>
+    </tr>
+</table>

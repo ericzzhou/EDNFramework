@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.Entity", "DotNet.Framework.Admin.Entity\DotNet.Framework.Admin.Entity.csproj", "{44DEB649-B841-43BE-AD0C-8C90A898DF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.Core", "DotNet.Framework.Admin.Core\DotNet.Framework.Admin.Core.csproj", "{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.Business", "DotNet.Framework.Admin.Business\DotNet.Framework.Admin.Business.csproj", "{4815033D-28DD-403A-A187-8879A0450C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.UI", "DotNet.Framework.Admin.UI\DotNet.Framework.Admin.UI.csproj", "{C697B018-36C3-41EA-B950-0D182659A551}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DotNet.Framework.Admin.Database", "DotNet.Framework.Admin.Database\DotNet.Framework.Admin.Database.sqlproj", "{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.WebTools", "DotNet.Framework.WebTools\DotNet.Framework.WebTools.csproj", "{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Framework.Admin.T4Code", "DotNet.Framework.Admin.T4Code\DotNet.Framework.Admin.T4Code.csproj", "{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs37
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DotNet.Framework.Admin.Entity\\DotNet.Framework.Admin.Entity.csproj
+		SccProjectName1 = DotNet.Framework.Admin.Entity
+		SccLocalPath1 = DotNet.Framework.Admin.Entity
+		SccProjectUniqueName2 = DotNet.Framework.Admin.Core\\DotNet.Framework.Admin.Core.csproj
+		SccProjectName2 = DotNet.Framework.Admin.Core
+		SccLocalPath2 = DotNet.Framework.Admin.Core
+		SccProjectUniqueName3 = DotNet.Framework.Admin.Business\\DotNet.Framework.Admin.Business.csproj
+		SccProjectName3 = DotNet.Framework.Admin.Business
+		SccLocalPath3 = DotNet.Framework.Admin.Business
+		SccProjectUniqueName4 = DotNet.Framework.Admin.UI\\DotNet.Framework.Admin.UI.csproj
+		SccProjectName4 = DotNet.Framework.Admin.UI
+		SccLocalPath4 = DotNet.Framework.Admin.UI
+		SccProjectUniqueName5 = DotNet.Framework.Admin.Database\\DotNet.Framework.Admin.Database.sqlproj
+		SccProjectName5 = DotNet.Framework.Admin.Database
+		SccLocalPath5 = DotNet.Framework.Admin.Database
+		SccProjectUniqueName6 = DotNet.Framework.WebTools\\DotNet.Framework.WebTools.csproj
+		SccProjectName6 = DotNet.Framework.WebTools
+		SccLocalPath6 = DotNet.Framework.WebTools
+		SccProjectUniqueName7 = DotNet.Framework.Admin.T4Code\\DotNet.Framework.Admin.T4Code.csproj
+		SccProjectName7 = DotNet.Framework.Admin.T4Code
+		SccLocalPath7 = DotNet.Framework.Admin.T4Code
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DEB649-B841-43BE-AD0C-8C90A898DF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B884C319-E8D9-4E82-B02B-0D2942AC7B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4815033D-28DD-403A-A187-8879A0450C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C697B018-36C3-41EA-B950-0D182659A551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81AEE79-CFC5-4A90-AFAD-7CBEA32311B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EB9A44-F081-4312-93F8-6FF9BEFD9DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90067D30-8B79-4218-A3EE-BA67D2C2B5A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

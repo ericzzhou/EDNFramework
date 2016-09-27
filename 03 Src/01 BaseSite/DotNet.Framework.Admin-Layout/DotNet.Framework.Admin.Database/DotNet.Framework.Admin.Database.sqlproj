@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DotNet.Framework.Admin.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{21563c4f-3afb-450c-b3bd-6b379e4eede9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DotNet.Framework.Admin.Database</RootNamespace>
+    <AssemblyName>DotNet.Framework.Admin.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="EDNF_SYS" />
+    <Folder Include="EDNF_Account" />
+    <Folder Include="EDNF_CMS" />
+    <Folder Include="EDNF_Poll" />
+    <Folder Include="EDNF_Product" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EDNF_SYS\EDNF_SYS_ConfigContent.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_ConfigType.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_EmailQueue.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_ErrorLog.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_FilterWords.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_Guestbook.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_Log.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_MailConfig.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_SiteMessage.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_SiteMessageLog.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_SiteSettings.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_SYS\EDNF_SYS_UserLog.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_Department.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_Permission.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_PermissionActions.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_PermissionCategories.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_Role.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_RolePermissions.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_RolePermissionsAction.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_User.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_User_LogonLog.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_UserBind.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_UserRoles.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Account\EDNF_Account_UserType.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_Advertisement.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_AdvertisePosition.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_Brand.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_ClassType.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_Comment.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_Content.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_ContentClass.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_FLinks.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_Photo.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_PhotoAlbum.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_PhotoClass.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_Video.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_VideoAlbum.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_VideoClass.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_CMS\EDNF_CMS_WebMenuConfig.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Poll\EDNF_Poll_Forms.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Poll\EDNF_Poll_Options.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Poll\EDNF_Poll_Reply.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Poll\EDNF_Poll_Topics.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Poll\EDNF_Poll_UserPoll.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Poll\EDNF_Poll_Users.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Product\EDNF_Product_Class.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+    <None Include="EDNF_Product\EDNF_Product_Item.sql">
+      <ApplicationScope>False</ApplicationScope>
+    </None>
+  </ItemGroup>
+</Project>

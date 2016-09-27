@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05896196-5939-4C70-A139-8A66B398A202}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eric.Framework.Account</RootNamespace>
+    <AssemblyName>Eric.Framework.Account</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Eric.Framework.Account.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\Account_Permission.cs" />
+    <Compile Include="BLL\Account_Permission_Action.cs" />
+    <Compile Include="BLL\Account_Role.cs" />
+    <Compile Include="BLL\Account_User.cs" />
+    <Compile Include="DALFactory\DataAccess.cs" />
+    <Compile Include="IDAL\IAccount_Permission.cs" />
+    <Compile Include="IDAL\IAccount_Permission_Action.cs" />
+    <Compile Include="IDAL\IAccount_Role.cs" />
+    <Compile Include="IDAL\IAccount_User.cs" />
+    <Compile Include="Model\Account_Permission.cs" />
+    <Compile Include="Model\Account_Permission_Action.cs" />
+    <Compile Include="Model\Account_Role.cs" />
+    <Compile Include="Model\Account_RolePermission.cs" />
+    <Compile Include="Model\Account_User.cs" />
+    <Compile Include="Model\Account_UserRole.cs" />
+    <Compile Include="Model\PagedInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLServerDAL\Account_Permission.cs" />
+    <Compile Include="SQLServerDAL\Account_Permission_Action.cs" />
+    <Compile Include="SQLServerDAL\Account_Role.cs" />
+    <Compile Include="SQLServerDAL\Account_User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eric.Framework.DBUtility\Eric.Framework.DBUtility.csproj">
+      <Project>{9be74c60-7b3a-4ef6-9065-f88f0dbe8b73}</Project>
+      <Name>Eric.Framework.DBUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

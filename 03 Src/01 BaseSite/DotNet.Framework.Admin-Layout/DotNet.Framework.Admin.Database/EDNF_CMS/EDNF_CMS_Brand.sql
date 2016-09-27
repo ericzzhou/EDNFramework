@@ -1,0 +1,16 @@
+﻿GO
+
+CREATE TABLE [EDNF_CMS_Brand](
+	[BrandID] [int] IDENTITY(1,1) NOT NULL,
+	[BrandName] [varchar](50) NOT NULL,
+	[BrandLogo] [varchar](100) NOT NULL,
+	[BrandDesc] [varchar](2000) NULL,
+	[EnterpriseID] [int] NOT NULL,
+	[State] [bit] NOT NULL DEFAULT(0),
+	[Orders] [int] NOT NULL DEFAULT(0),
+ CONSTRAINT [PK_EDNF_CMS_Brand] PRIMARY KEY NONCLUSTERED 
+(
+	[BrandID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+

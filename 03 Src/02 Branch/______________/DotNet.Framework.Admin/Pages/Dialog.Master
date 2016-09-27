@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dialog.master.cs" Inherits="DotNet.Framework.Admin.Pages.Dialog" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <%--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" />--%>
+
+    <%=Css %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" />--%>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="formDialog" runat="server">
+       <%-- <div class="main">--%>
+                <asp:ContentPlaceHolder ID="body" runat="server">
+                </asp:ContentPlaceHolder>
+        <%--</div>--%>
+    </form>
+    <div class="footer" id="footer" style="z-index: 1000;"></div>
+    <script src="<%:ResourcePath%>/Resource/Scripts/jquery-1.7.2.min.js"></script>
+     <script src="<%:ResourcePath %>/Resource/Scripts/json2.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/bootstrap.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Libs/jquery-ui/js/jquery-ui.min.js"></script>
+    <%--<script src="<%:ResourcePath %>/Resource/Scripts/jquery.pin.min.js"></script>--%>
+   
+    <%--<script src="<%:ResourcePath %>/Resource/Scripts/base.js"></script>--%>
+    <%--<script src="<%:ResourcePath %>/Resource/Libs/DataTables-1.9.4/js/jquery.dataTables.min.js"></script>--%>
+    <%--<script src="<%:ResourcePath %>/Resource/Libs/showLoading/js/jquery.showLoading.js"></script>--%>
+    <%--<script src="<%:ResourcePath %>/Resource/Scripts/jquery.validate.js"></script>--%>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/pqgrid/pqgrid.min.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.message.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.modal.js"></script>
+    <script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/terebentina-sco.js/js/sco.confirm.js"></script>
+    <script src="<%:ResourcePath %>/Resource/Scripts/Extend/jquery.extend.js"></script>
+    <%--<script charset="GBK" src="<%:ResourcePath %>/Resource/Libs/iCheck/jquery.icheck.min.js"></script>--%>
+    <asp:ContentPlaceHolder ID="floor" runat="server">
+    </asp:ContentPlaceHolder>
+    <%=Script %>
+</body>
+</html>

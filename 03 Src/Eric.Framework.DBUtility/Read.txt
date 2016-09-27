@@ -1,0 +1,3 @@
+﻿Web.Config 文件夹添加 AppSetting 节点  
+	1、ConnectionString 链接字符串
+	2、ConStringEncrypt 是否加密 （true/false）

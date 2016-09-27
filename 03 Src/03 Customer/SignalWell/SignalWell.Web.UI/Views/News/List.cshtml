@@ -1,0 +1,82 @@
+@using Webdiyer.WebControls.Mvc
+@{
+    ViewBag.Title = ViewBag.ClassName??"新闻中心";
+    int TotalCount = Convert.ToInt32(ViewBag.TotalCount);
+    int PageIndex = Convert.ToInt32(ViewBag.PageIndex);
+    int PageSize = Convert.ToInt32(ViewBag.PageSize);
+    var news = ViewBag.News as List<SignalWell.Web.UI.Models.EDNF_CMS_Content>;
+    int CategoryID = ViewBag.CategoryID;
+    
+    string firstCss = "#55a002";
+    string secondCss = "#55a002";
+    if (CategoryID == 58)
+    {
+        firstCss = "#2473ba";
+    }
+    if (CategoryID == 59)
+    {
+        secondCss = "#2473ba";
+    }
+}
+@section bodyleft{
+
+ <div class="handle_a">
+        <div class="head_bg">
+            <div class="cl top_h">
+                <div class="nov m_l l">
+                     
+                    <ul>
+            <li> <a href="@Url.Action("list", "news", new { id = 58 })"  class="a hover"> <span class="db tingico liico0"></span> <b>公司新闻</b></a></li> 
+			 <li> <a href="@Url.Action("list", "news", new { id = 59 })"  class="a hover"> <span class="db tingico liico0"></span> <b>业内新闻</b></a></li> 
+			 
+      </ul>
+    </div>
+                <div class="park"></div>
+            </div>
+        </div>
+    </div>
+	
+    
+}
+<style type="text/css">
+    .right_zi a {
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" class="right_top"><span style="float:right; font-size:14px"> 当前位置：<a href="/" style=" color:#FFFFFF; text-decoration:none">首页</a> >> 新闻中心  >>  @ViewBag.ClassName </span> @ViewBag.ClassName</td>
+    </tr>
+    <tr>
+        <td class="right_zi"  height="450" valign="top" >
+            <table>
+                @foreach (var item in news)
+                {
+                    <tr>
+                        <td width="580"><a href="@Url.Action("details", "news", new { id = item.ContentID })">@item.Title</a></td>
+                        <td>@item.CreatedDate</td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="2" class="pager">
+                        @Html.Pager(TotalCount, PageSize, PageIndex, "index", "news", new PagerOptions
+       {
+           PageIndexParameterName = "page",
+           ContainerTagName = "ul",
+           CurrentPagerItemWrapperFormatString = "<li class=\"active\">{0}</li>",
+           NumericPagerItemWrapperFormatString = "<li>{0}</li>",
+           NavigationPagerItemWrapperFormatString = "<li>{0}</li>",
+           AlwaysShowFirstLastPageNumber = true,
+           AutoHide = false,
+           //CssClass = "pager"
+
+       }, null, null, null)
+                    </td>
+                </tr>
+
+            </table>
+            <p></p>
+        </td>
+    </tr>
+</table>

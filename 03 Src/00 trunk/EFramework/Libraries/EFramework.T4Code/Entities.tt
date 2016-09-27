@@ -1,0 +1,62 @@
+﻿<#@ template debug="True" hostspecific="True" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+using System;
+using System.Data;
+namespace MyProject.Entities 
+{     
+<#
+    string connectionString = "Data Source=localhost;Initial Catalog=EDNFramework;User ID=sa;pwd=as";
+    SqlConnection conn = new SqlConnection(connectionString);
+    conn.Open();
+    System.Data.DataTable schema = conn.GetSchema("TABLES");
+    string selectQuery = "select * from @tableName";
+    SqlCommand command = new SqlCommand(selectQuery,conn);
+    SqlDataAdapter ad = new SqlDataAdapter(command);
+    System.Data.DataSet ds = new DataSet();
+	#>
+	public class ALL
+	{
+<#
+    foreach(System.Data.DataRow row in schema.Rows)
+    {#>
+		<#= row["TABLE_NAME"].ToString().TrimStart('E','D','N','F','_')#>Entity <#= row["TABLE_NAME"].ToString().TrimStart('E','D','N','F','_')#> = new <#= row["TABLE_NAME"].ToString().TrimStart('E','D','N','F','_')#>Entity();
+<#
+  }
+#>
+	}
+
+<#
+    foreach(System.Data.DataRow row in schema.Rows)
+    {
+#>  
+
+		/// <summary> 
+		/// <#= row["TABLE_NAME"].ToString().TrimStart('E','D','N','F','_')#>Entity 的注释
+		/// </summary> 
+		[Serializable]
+		public class <#= row["TABLE_NAME"].ToString().TrimStart('E','D','N','F','_')#>Entity
+		{<#
+			ds.Tables.Clear();
+			command.CommandText = selectQuery.Replace("@tableName",row["TABLE_NAME"].ToString());
+			ad.FillSchema(ds, SchemaType.Mapped, row["TABLE_NAME"].ToString());
+			foreach (DataColumn dc in ds.Tables[0].Columns)
+			{#>
+
+			public <#= dc.DataType.Name #> <#= dc.ColumnName #> { get; set; }
+		   <#}#>         
+		}             
+	
+<#
+  }
+#>
+}
